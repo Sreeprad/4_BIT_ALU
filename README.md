@@ -24,7 +24,7 @@ The ALU performs different functions based on the selection lines `SEL0` and `SE
 
 |  SEL1  |  SEL0  | Operation |
 |--------|--------|-----------|
-|   0    |   0    | ADD       |
+|   0    |   0    | ADD / SUB / INV       |
 |   0    |   1    | AND       |
 |   1    |   0    | OR        |
 |   1    |   1    | XOR       |
