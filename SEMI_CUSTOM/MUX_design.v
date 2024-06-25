@@ -1,4 +1,4 @@
-module MUX2_1_design(
+module MUX_design(
     input D0,
     input D1,
     input S,
