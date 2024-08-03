@@ -1,0 +1,1723 @@
+
+            Assura (R) Physical Verification Version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25
+            Release 4.1_USR6_EHF13
+
+Copyright (c) Cadence Design Systems. All rights reserved.
+@(#)$CDS: assura_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:28 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/assura on Wed Jun 19 16:06:47 2024
+
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/aveng /home/klu/Desktop/SDC_project/XOR_LVS.rsf -exec1 -LVS -cdslib /home/klu/Desktop/SDC_project/cds.lib
+@(#)$CDS: aveng_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:29 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/aveng on Wed Jun 19 16:06:47 2024
+
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+ Summary Report: XOR_LVS.sum
+ RSF           : /home/klu/Desktop/SDC_project/XOR_LVS.rsf
+ Library Name  : 4_BIT_ALU
+ CDSLIB Path   : "/home/klu/Desktop/SDC_project/cds.lib"
+ Cell Name     : Ex_OR_Gate
+ View Name     : layout
+ Rules File    : /home/install/FOUNDRY/analog/90nm/assura/extract.rul
+ Options       : -exec1 -LVS -cdslib /home/klu/Desktop/SDC_project/cds.lib 
+ Work Directory: .
+ Operating Mode: Legacy Mode is Off
+
+
+Starting dfIIToVdb...
+2024/06/19 16:06:47 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:47 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+@(#)$CDS: dfIIToVdb_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/dfIIToVdb on Wed Jun 19 16:06:48 2024
+
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+Loading gpdk090/libInit.il ...
+	Loading gpdk090/loadCxt.ile ... done!
+	Loading context 'gpdk090' from library 'gpdk090' ... done!
+	Loading context 'pdkUtils' from library 'gpdk090' ... done!
+	Loading gpdk090/gpdk090_customFilter.il ... done!
+	Loading gpdk090/.simrc ... done!
+	Loading gpdk090/libInitCustomExit.il ... 	Loading Environment Settings ...
+*WARNING* envSetVal: Can't set the value of variable 'extractVerifySubstrate',
+	in tool[.partition] 'layout' - it has not been registered.
+*WARNING* Master env file /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/spectre/.cdsenv is not readable
+*WARNING* envSetVal: could not find tool[.partition] 'spectre.envOpts'
+*WARNING* Cannot find /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/hspiceD directory to load environment variables
+	Loading gpdk090/gpdk090_PDKRegistrations.il ... done!
+
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 90nm PDK                       *           
+  *                        (gpdk090)                          *           
+  *                                                           *           
+  *************************************************************           
+	
+
+	Version : 4.6
+
+	Build date: 10-FEB-2011
+
+done!
+Loaded gpdk090/libInit.il successfully!
+*WARNING* envSetVal: could not find tool[.partition] 'hspiceD.envOpts'
+Compiling rules...
+
+WARNING LVS Run detected.
+Non-legacy mode has been disabled for this LVS run
+2024/06/19 16:06:48 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:48 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+Checking out license for Assura_LVS
+*WARNING* Failed to obtain license for Assura_LVS
+No Assura license available.
+Checking out license for Phys_Ver_Sys_LVS_XL
+
+Reading the design data...
+
+
+
+Finished dfIIToVdb.
+
+Building the VDB part 2 in background mode.
+2024/06/19 16:06:49 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:49 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+
+Building tables for LVS Preprocessing in background mode.
+
+
+Starting /home/install/ASSURA41/tools.lnx86/assura/bin/vdbToCells . XOR_LVS
+
+Finished /home/install/ASSURA41/tools.lnx86/assura/bin/vdbToCells
+
+Starting Nvn PreExtraction...
+
+Starting /home/install/ASSURA41/tools.lnx86/assura/bin/nvn /home/klu/Desktop/SDC_project/XOR_LVS.rsf -preExtract -exec1 -cdslib /home/klu/Desktop/SDC_project/cds.lib
+Checking out license for Assura_LVS
+Checking out license for Phys_Ver_Sys_LVS_XL
+@(#)$CDS: nvn_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+run on cad6 at Wed Jun 19 16:06:49 2024
+  
+*************************************************************** 
+  
+ GENERIC PDK Assura Compare Rules file 
+  Cadence Design Systems shall not be liable for the accuracy 
+  of this LVS rule file or its ability to capture errors.     
+  The user is responsible for thoroughly testing and          
+  implementing its features.                                  
+ 
+*************************************************************** 
+ 
+Reading schematic network
+ running dfIIToVldb -cdslib /home/klu/Desktop/SDC_project/cds.lib /home/klu/Desktop/SDC_project/XOR_LVS.vlr /home/klu/Desktop/SDC_project/XOR_LVS.rsf
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+@(#)$CDS: dfIIToVldb_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:35 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/dfIIToVldb on Wed Jun 19 16:06:50 2024
+
+  
+*************************************************************** 
+  
+ GENERIC PDK Assura Compare Rules file 
+  Cadence Design Systems shall not be liable for the accuracy 
+  of this LVS rule file or its ability to capture errors.     
+  The user is responsible for thoroughly testing and          
+  implementing its features.                                  
+ 
+*************************************************************** 
+ 
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+Top Cell Library: "4_BIT_ALU"
+Top Cell Name: "Ex_OR_Gate"
+Top Cell View: "schematic"
+Output Data Base Name: "/home/klu/Desktop/SDC_project/XOR_LVS.sdb"
+Simulator Name: "auLvs"
+ERROR (LMF-02005): License call failed for feature Assura_LVS, version 4.100 and quantity 1. The license server search path is defined as 5280@cadenceserver. The FLEXnet error message is as follows,
+    FLEXnet ERROR(-5, 0, 0): No such feature exists.
+
+Run 'lic_error LMF-02005' for more information.
+Failed to obtain license for "Assura_LVS". 
+Checking out license for Phys_Ver_Sys_LVS_XL
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+View List: "auLvs schematic symbol"
+Stop List: "auLvs"
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+Loading gpdk090/libInit.il ...
+	Loading gpdk090/loadCxt.ile ... done!
+	Loading context 'gpdk090' from library 'gpdk090' ... done!
+	Loading context 'pdkUtils' from library 'gpdk090' ... done!
+	Loading gpdk090/gpdk090_customFilter.il ... done!
+	Loading gpdk090/.simrc ... done!
+	Loading gpdk090/libInitCustomExit.il ... 	Loading Environment Settings ...
+*WARNING* envSetVal: Can't set the value of variable 'extractVerifySubstrate',
+	in tool[.partition] 'layout' - it has not been registered.
+*WARNING* Master env file /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/spectre/.cdsenv is not readable
+*WARNING* envSetVal: could not find tool[.partition] 'spectre.envOpts'
+*WARNING* Cannot find /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/hspiceD directory to load environment variables
+	Loading gpdk090/gpdk090_PDKRegistrations.il ... done!
+
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 90nm PDK                       *           
+  *                        (gpdk090)                          *           
+  *                                                           *           
+  *************************************************************           
+	
+
+	Version : 4.6
+
+	Build date: 10-FEB-2011
+
+done!
+Loaded gpdk090/libInit.il successfully!
+*WARNING* envSetVal: could not find tool[.partition] 'hspiceD.envOpts'
+Net Listing Mode is Analog
+writing /home/klu/Desktop/SDC_project/XOR_LVS.sdb
+ inputting /home/klu/Desktop/SDC_project/XOR_LVS.sdb
+Reading layout network
+ inputting network XOR_LVS.ldb
+Preprocessing schematic network phase 1
+Preprocessing layout network phase 1
+ WARNING (AVLVSNN-10040) : bindingFile/bind rule - schematic cell 'nmos1v_iso(MOS)' is not found.
+ This binding will be skipped.
+Preprocessing schematic network phase 2
+Preprocessing layout network phase 2
+cpu=0.00m  wall=0.02m  mem=62.79mb
+
+Finished /home/install/ASSURA41/tools.lnx86/assura/bin/nvn
+
+Executing: bulk = cellBoundary(root)
+
+Building the VDB part 3 in background mode.
+2024/06/19 16:06:50 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:50 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+
+Finished building the VDB. VDB build times for main process:
+cpu: 0.07  elap: 3  pf: 0  in: 32  out: 152  virt: 101M  phys: 603M
+
+Running the Task Processor, 1 cells, 2658 steps...
+
+Top Cell is 'Ex_OR_Gate layout 4_BIT_ALU'
+
+Executing: Bondpad = geomOr(Bondpad Bondpad_pin)
+
+Executing: CapMetal = geomOr(CapMetal CapMetal_pin)
+
+Executing: INDdummy = geomOr(INDdummy INDdummy_pin)
+
+Executing: Metal1_d = geomOr(Metal1_d Metal1_d_pin)
+
+Executing: Metal1_p = geomOr(Metal1_p Metal1_p_pin)
+
+Executing: Metal2_d = geomOr(Metal2_d Metal2_d_pin)
+
+Executing: Metal2_p = geomOr(Metal2_p Metal2_p_pin)
+
+Executing: Metal3_d = geomOr(Metal3_d Metal3_d_pin)
+
+Executing: Metal3_p = geomOr(Metal3_p Metal3_p_pin)
+
+Executing: Metal4_d = geomOr(Metal4_d Metal4_d_pin)
+
+Executing: Metal4_p = geomOr(Metal4_p Metal4_p_pin)
+
+Executing: Metal5_d = geomOr(Metal5_d Metal5_d_pin)
+
+Executing: Metal5_p = geomOr(Metal5_p Metal5_p_pin)
+
+Executing: Metal6_d = geomOr(Metal6_d Metal6_d_pin)
+
+Executing: Metal6_p = geomOr(Metal6_p Metal6_p_pin)
+
+Executing: Metal7_d = geomOr(Metal7_d Metal7_d_pin)
+
+Executing: Metal7_p = geomOr(Metal7_p Metal7_p_pin)
+
+Executing: Metal8_d = geomOr(Metal8_d Metal8_d_pin)
+
+Executing: Metal8_p = geomOr(Metal8_p Metal8_p_pin)
+
+Executing: Metal9_d = geomOr(Metal9_d Metal9_d_pin)
+
+Executing: Metal9_p = geomOr(Metal9_p Metal9_p_pin)
+
+Executing: Nburied = geomOr(Nburied Nburied_pin)
+
+Executing: Nimp = geomOr(Nimp Nimp_pin)
+
+Executing: Nwell = geomOr(Nwell Nwell_pin)
+
+Executing: Pimp = geomOr(Pimp Pimp_pin)
+
+Executing: Poly = geomOr(Poly Poly_pin)
+
+Executing: Psub = geomOr(Psub Psub_pin)
+
+Executing: Metal1_v = geomAnd(Metal1_d Metal1_p)
+
+Executing: Metal2_v = geomAnd(Metal2_d Metal2_p)
+
+Executing: Metal3_v = geomAnd(Metal3_d Metal3_p)
+
+Executing: Metal4_v = geomAnd(Metal4_d Metal4_p)
+
+Executing: Metal5_v = geomAnd(Metal5_d Metal5_p)
+
+Executing: Metal6_v = geomAnd(Metal6_d Metal6_p)
+
+Executing: Metal7_v = geomAnd(Metal7_d Metal7_p)
+
+Executing: Metal8_v = geomAnd(Metal8_d Metal8_p)
+
+Executing: Metal9_v = geomAnd(Metal9_d Metal9_p)
+
+Executing: NOD = geomAnd(Nimp Oxide)
+
+Executing: POD = geomAnd(Oxide Pimp)
+
+Executing: cont_poly = geomAnd(Cont Poly)
+
+Executing: dw_sna = geomAnd(Nburied Nwell)
+
+Executing: ind_term1 = geomAnd(IND2dummy INDdummy)
+
+Executing: ind_term2 = geomAnd(IND3dummy INDdummy)
+
+Executing: nactive = geomCat(NOD)
+
+Executing: nb_tap = geomCat(dw_sna)
+
+Executing: npn_base = geomAnd(NPNdummy Psub)
+
+Executing: pactive = geomCat(POD)
+
+Executing: pdiff = geomAndNot(pactive Poly)
+
+Executing: poly_conn = geomAndNot(Poly Resdum)
+
+Executing: ndiff = geomAndNot(nactive poly_conn)
+
+Executing: via2_cap = geomAnd(CapMetal Via2)
+
+Executing: L40182 = geomAnd(Nwell SiProt)
+
+Executing: _rnwellod = geomAnd(L40182 ResWdum)
+
+Executing: L25544 = geomAvoiding(Nwell SiProt)
+
+Executing: _rnwellsti = geomAnd(L25544 ResWdum)
+
+Executing: L82025 = geomAnd(Cont npn_base)
+
+Executing: cont_base = geomAnd(L82025 pdiff)
+
+Executing: L46829 = geomAndNot(ndiff Resdum)
+
+Executing: ndiff_conn = geomAndNot(L46829 NPNdummy)
+
+Executing: cont_ndiff = geomAnd(Cont ndiff_conn)
+
+Executing: ntap = geomAnd(Nwell ndiff_conn)
+
+Executing: L59011 = geomAndNot(Nwell ResWdum)
+
+Executing: npn_coll = geomAnd(L59011 NPNdummy)
+
+Executing: L25060 = geomAnd(Cont npn_coll)
+
+Executing: cont_coll = geomAndNot(L25060 Psub)
+
+Executing: nwell_conn = geomAndNot(L59011 NPNdummy)
+
+Executing: L12267 = geomAndNot(pdiff Resdum)
+
+Executing: pdiff_conn = geomAndNot(L12267 NPNdummy)
+
+Executing: _pnp = geomAnd(PNPdummy pdiff_conn)
+
+Executing: cont_pdiff = geomAnd(Cont pdiff_conn)
+
+Executing: ptap = geomAndNot(pdiff_conn Nwell)
+
+Executing: L68803 = geomAnd(BJTdum pdiff_conn)
+
+Executing: _vpnp2 = geomAnd(L68803 VPNP2dum)
+
+Executing: _vpnp5 = geomAnd(L68803 VPNP5dum)
+
+Executing: _vpnp10 = geomAnd(L68803 VPNP10dum)
+
+Executing: Metal1_d_n = geomCat(Metal1_d)
+
+Executing: L59680 = geomOr(Metal1_d_n Metal1_p)
+
+Executing: Metal1 = geomOr(L59680 Metal1_f)
+
+Executing: L32159 = geomAndNot(Metal1 Metal1_slot)
+
+Executing: _resm1 = geomAnd(L32159 M1Resdum)
+
+Executing: metal1_conn = geomAndNot(L32159 M1Resdum)
+
+Executing: Metal2_d_n = geomCat(Metal2_d)
+
+Executing: L17344 = geomOr(Metal2_d_n Metal2_p)
+
+Executing: Metal2 = geomOr(L17344 Metal2_f)
+
+Executing: L6015 = geomAndNot(Metal2 Metal2_slot)
+
+Executing: _resm2 = geomAnd(L6015 M2Resdum)
+
+Executing: L41497 = geomAnd(INDdummy Metal2)
+
+Executing: ind_term1_tap = geomAnd(IND2dummy L41497)
+
+Executing: ind_term2_tap = geomAnd(IND3dummy L41497)
+
+Executing: metal2_conn = geomAndNot(L6015 M2Resdum)
+
+Executing: MIMCAP = geomAnd(CapMetal metal2_conn)
+
+Executing: Metal3_d_n = geomCat(Metal3_d)
+
+Executing: L92288 = geomOr(Metal3_d_n Metal3_p)
+
+Executing: Metal3 = geomOr(L92288 Metal3_f)
+
+Executing: L79871 = geomAndNot(Metal3 Metal3_slot)
+
+Executing: _resm3 = geomAnd(L79871 M3Resdum)
+
+Executing: metal3_conn = geomAndNot(L79871 M3Resdum)
+
+Executing: Metal4_d_n = geomCat(Metal4_d)
+
+Executing: L34624 = geomOr(Metal4_d_n Metal4_p)
+
+Executing: Metal4 = geomOr(L34624 Metal4_f)
+
+Executing: L53727 = geomAndNot(Metal4 Metal4_slot)
+
+Executing: _resm4 = geomAnd(L53727 M4Resdum)
+
+Executing: metal4_conn = geomAndNot(L53727 M4Resdum)
+
+Executing: Metal5_d_n = geomCat(Metal5_d)
+
+Executing: L76960 = geomOr(Metal5_d_n Metal5_p)
+
+Executing: Metal5 = geomOr(L76960 Metal5_f)
+
+Executing: L27583 = geomAndNot(Metal5 Metal5_slot)
+
+Executing: _resm5 = geomAnd(L27583 M5Resdum)
+
+Executing: metal5_conn = geomAndNot(L27583 M5Resdum)
+
+Executing: Metal6_d_n = geomCat(Metal6_d)
+
+Executing: L19296 = geomOr(Metal6_d_n Metal6_p)
+
+Executing: Metal6 = geomOr(L19296 Metal6_f)
+
+Executing: L65857 = geomAndNot(Metal6 Metal6_slot)
+
+Executing: _resm6 = geomAnd(L65857 M6Resdum)
+
+Executing: metal6_conn = geomAndNot(L65857 M6Resdum)
+
+Executing: Metal7_d_n = geomCat(Metal7_d)
+
+Executing: L38368 = geomOr(Metal7_d_n Metal7_p)
+
+Executing: Metal7 = geomOr(L38368 Metal7_f)
+
+Executing: L92001 = geomAndNot(Metal7 Metal7_slot)
+
+Executing: _resm7 = geomAnd(L92001 M7Resdum)
+
+Executing: metal7_conn = geomAndNot(L92001 M7Resdum)
+
+Executing: Metal8_d_n = geomCat(Metal8_d)
+
+Executing: L96032 = geomOr(Metal8_d_n Metal8_p)
+
+Executing: Metal8 = geomOr(L96032 Metal8_f)
+
+Executing: L18145 = geomAndNot(Metal8 Metal8_slot)
+
+Executing: _resm8 = geomAnd(L18145 M8Resdum)
+
+Executing: metal8_conn = geomAndNot(L18145 M8Resdum)
+
+Executing: Metal9_d_n = geomCat(Metal9_d)
+
+Executing: L53696 = geomOr(Metal9_d_n Metal9_p)
+
+Executing: Metal9 = geomOr(L53696 Metal9_f)
+
+Executing: bp_tap = geomAnd(Bondpad Metal9)
+
+Executing: L44289 = geomAndNot(Metal9 Metal9_slot)
+
+Executing: _resm9 = geomAnd(L44289 M9Resdum)
+
+Executing: metal9_conn = geomAndNot(L44289 M9Resdum)
+
+Executing: L54696 = geomAnd(DIOdummy Oxide)
+
+Executing: L65805 = geomAnd(L54696 Nimp)
+
+Executing: _ndio = geomAndNot(L65805 Nwell)
+
+Executing: L25387 = geomAnd(L54696 Pimp)
+
+Executing: _pdio = geomAnd(L25387 Nwell)
+
+Executing: L69474 = geomAnd(L46829 NPNdummy)
+
+Executing: npn_emit = geomAnd(L69474 Psub)
+
+Executing: _npn = geomAnd(NPNdummy npn_emit)
+
+Executing: cont_emit = geomAnd(Cont npn_emit)
+
+Executing: L98704 = geomAnd(Metal2 Via2)
+
+Executing: L47735 = geomOr(CapMetal INDdummy)
+
+Executing: via2_out_capInd = geomAndNot(L98704 L47735)
+
+Executing: L28394 = geomAndNot(Oxide Oxide_thk)
+
+Executing: L66375 = geomAnd(L28394 Poly)
+
+Executing: L29970 = geomAnd(L66375 Pimp)
+
+Executing: _pmos_12_hvt = geomAnd(L29970 Phvt)
+
+Executing: L24975 = geomAnd(Oxide Oxide_thk)
+
+Executing: L98842 = geomAnd(L24975 Poly)
+
+Executing: L73768 = geomAnd(L98842 Pimp)
+
+Executing: _pmoscap_25 = geomAnd(Capdum L73768)
+
+Executing: _pmoscap_25_3 = geomAnd(Cap3dum L73768)
+
+Executing: L51921 = geomAvoiding(NOD SiProt)
+
+Executing: L63811 = geomAnd(L51921 Resdum)
+
+Executing: _rndiff = geomAndNot(L63811 Nwell)
+
+Executing: L52573 = geomAnd(NOD SiProt)
+
+Executing: L17877 = geomAnd(L52573 Resdum)
+
+Executing: _rndiff_nosal = geomAndNot(L17877 Nwell)
+
+Executing: L90381 = geomAndNot(Poly SiProt)
+
+Executing: L49196 = geomAnd(L90381 Nimp)
+
+Executing: L17878 = geomAnd(L49196 Resdum)
+
+Executing: _rnpoly = geomAndNot(L17878 Nwell)
+
+Executing: L5240 = geomAnd(Poly SiProt)
+
+Executing: L1378 = geomAnd(L5240 Nimp)
+
+Executing: L66582 = geomAnd(L1378 Resdum)
+
+Executing: _rnpoly_nosal = geomAndNot(L66582 Nwell)
+
+Executing: _rnpolynw = geomAnd(L17878 Nwell)
+
+Executing: _rnpolynw_nosal = geomAnd(L66582 Nwell)
+
+Executing: L24911 = geomAvoiding(POD SiProt)
+
+Executing: L83336 = geomAnd(L24911 Resdum)
+
+Executing: _rpdiff = geomAnd(L83336 Nwell)
+
+Executing: L79583 = geomAnd(POD SiProt)
+
+Executing: L2769 = geomAnd(L79583 Resdum)
+
+Executing: _rpdiff_nosal = geomAnd(L2769 Nwell)
+
+Executing: L8778 = geomAnd(L90381 Pimp)
+
+Executing: L54937 = geomAnd(L8778 Resdum)
+
+Executing: _rppoly = geomAndNot(L54937 Nwell)
+
+Executing: L60960 = geomAnd(L5240 Pimp)
+
+Executing: L4294 = geomAnd(L60960 Resdum)
+
+Executing: _rppoly_nosal = geomAndNot(L4294 Nwell)
+
+Executing: _rppolynw = geomAnd(L54937 Nwell)
+
+Executing: _rppolynw_nosal = geomAnd(L4294 Nwell)
+
+Executing: L8948 = geomOr(Cap3dum Capdum)
+
+Executing: _pmos_25 = geomAndNot(L73768 L8948)
+
+Executing: L62733 = geomAndNot(L29970 Phvt)
+
+Executing: _pmoscap_12 = geomAnd(Capdum L62733)
+
+Executing: _pmoscap_12_3 = geomAnd(Cap3dum L62733)
+
+Executing: L89552 = geomAnd(L66375 Nimp)
+
+Executing: L25441 = geomAndNot(L89552 Nzvt)
+
+Executing: L941 = geomAnd(L25441 Nhvt)
+
+Executing: _nmos_12_hvt = geomAndNot(L941 Nburied)
+
+Executing: L70734 = geomAndNot(L25441 Nhvt)
+
+Executing: _nmos_12_iso = geomAnd(L70734 Nburied)
+
+Executing: L70180 = geomAnd(L89552 Nzvt)
+
+Executing: L21328 = geomAndNot(L70180 Nhvt)
+
+Executing: _nmos_12_native = geomAndNot(L21328 Nburied)
+
+Executing: L14186 = geomAnd(L98842 Nimp)
+
+Executing: L15681 = geomAnd(L14186 Nzvt)
+
+Executing: L10869 = geomAndNot(L15681 Nhvt)
+
+Executing: _nmos_25_native = geomAndNot(L10869 Nburied)
+
+Executing: _pmos_12 = geomAndNot(L62733 L8948)
+
+Executing: L12316 = geomAndNot(bulk dw_sna)
+
+Executing: L86601 = geomSize(Psub -0.001)
+
+Executing: L7495 = geomAndNot(Psub L86601)
+
+Executing: L9236 = geomAndNot(L12316 L7495)
+
+Executing: psubstrate = geomAndNot(L9236 NPNdummy)
+
+Executing: L8530 = geomAndNot(L70734 Nburied)
+
+Executing: _nmoscap_12 = geomAnd(Capdum L8530)
+
+Executing: _nmoscap_12_3 = geomAnd(Cap3dum L8530)
+
+Executing: L55994 = geomAndNot(L14186 Nzvt)
+
+Executing: L55604 = geomAndNot(L55994 Nhvt)
+
+Executing: L64343 = geomAndNot(L55604 Nburied)
+
+Executing: _nmoscap_25 = geomAnd(Capdum L64343)
+
+Executing: _nmoscap_25_3 = geomAnd(Cap3dum L64343)
+
+Executing: _nmos_12 = geomAndNot(L8530 L8948)
+
+Executing: _nmos_25 = geomAndNot(L64343 L8948)
+
+Executing: geomConnect((via bp_tap Bondpad metal9_conn) (via Metal9_v Metal9_p metal9_co...
+ See the label report in "XOR_LVS.erc" file for details.
+
+
+Executing: geomStamp(ptap pdiff_conn error)
+
+Executing: geomStamp(psubstrate ptap error)
+
+Executing: geomStamp(ntap ndiff_conn error)
+
+Executing: geomStamp(nwell_conn ntap error)
+
+Executing: geomStamp(nb_tap nwell_conn error)
+
+Executing: geomStamp(Nburied nb_tap error)
+
+Executing: extractMOS("nmos1v" _nmos_12 (poly_conn "G") (ndiff_conn "S" "D") (psubstrate...
+         4 'nmos1v' created in cell 'Ex_OR_Gate layout 4_BIT_ALU'.
+
+Executing: attachParameter(w "w" _nmos_12)
+
+Executing: attachParameter(fw "fw" _nmos_12)
+
+Executing: attachParameter(simW "simW" _nmos_12)
+
+Executing: attachParameter(l "l" _nmos_12)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_12 shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_12 shared)
+
+Executing: extractMOS("nmos1v_hvt" _nmos_12_hvt (poly_conn "G") (ndiff_conn "S" "D") (ps...
+
+Executing: attachParameter(w "w" _nmos_12_hvt)
+
+Executing: attachParameter(fw "fw" _nmos_12_hvt)
+
+Executing: attachParameter(simW "simW" _nmos_12_hvt)
+
+Executing: attachParameter(l "l" _nmos_12_hvt)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_12_hvt shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_12_hvt shared)
+
+Executing: extractDevice("nmos1v_iso" _nmos_12_iso (poly_conn "G") (ndiff_conn "S" "D") ...
+
+Executing: attachParameter(w "w" _nmos_12_iso)
+
+Executing: attachParameter(fw "fw" _nmos_12_iso)
+
+Executing: attachParameter(simW "simW" _nmos_12_iso)
+
+Executing: attachParameter(l "l" _nmos_12_iso)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_12_iso shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_12_iso shared)
+
+Executing: extractMOS("nmos1v_nat" _nmos_12_native (poly_conn "G") (ndiff_conn "S" "D") ...
+
+Executing: attachParameter(w "w" _nmos_12_native)
+
+Executing: attachParameter(fw "fw" _nmos_12_native)
+
+Executing: attachParameter(simW "simW" _nmos_12_native)
+
+Executing: attachParameter(l "l" _nmos_12_native)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_12_native shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_12_native shared)
+
+Executing: extractMOS("nmos2v" _nmos_25 (poly_conn "G") (ndiff_conn "S" "D") (psubstrate...
+
+Executing: attachParameter(w "w" _nmos_25)
+
+Executing: attachParameter(fw "fw" _nmos_25)
+
+Executing: attachParameter(simW "simW" _nmos_25)
+
+Executing: attachParameter(l "l" _nmos_25)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_25 shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_25 shared)
+
+Executing: extractMOS("nmos2v_nat" _nmos_25_native (poly_conn "G") (ndiff_conn "S" "D") ...
+
+Executing: attachParameter(w "w" _nmos_25_native)
+
+Executing: attachParameter(fw "fw" _nmos_25_native)
+
+Executing: attachParameter(simW "simW" _nmos_25_native)
+
+Executing: attachParameter(l "l" _nmos_25_native)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _nmos_25_native shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _nmos_25_native shared)
+
+Executing: extractMOS("pmos1v" _pmos_12 (poly_conn "G") (pdiff_conn "S" "D") (nwell_conn...
+         4 'pmos1v' created in cell 'Ex_OR_Gate layout 4_BIT_ALU'.
+
+Executing: attachParameter(w "w" _pmos_12)
+
+Executing: attachParameter(fw "fw" _pmos_12)
+
+Executing: attachParameter(simW "simW" _pmos_12)
+
+Executing: attachParameter(l "l" _pmos_12)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _pmos_12 shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _pmos_12 shared)
+
+Executing: extractMOS("pmos1v_hvt" _pmos_12_hvt (poly_conn "G") (pdiff_conn "S" "D") (nw...
+
+Executing: attachParameter(w "w" _pmos_12_hvt)
+
+Executing: attachParameter(fw "fw" _pmos_12_hvt)
+
+Executing: attachParameter(simW "simW" _pmos_12_hvt)
+
+Executing: attachParameter(l "l" _pmos_12_hvt)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _pmos_12_hvt shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _pmos_12_hvt shared)
+
+Executing: extractMOS("pmos2v" _pmos_25 (poly_conn "G") (pdiff_conn "S" "D") (nwell_conn...
+
+Executing: attachParameter(w "w" _pmos_25)
+
+Executing: attachParameter(fw "fw" _pmos_25)
+
+Executing: attachParameter(simW "simW" _pmos_25)
+
+Executing: attachParameter(l "l" _pmos_25)
+
+Executing: attachParameter(sdarea ("as" "S") ("ad" "D") _pmos_25 shared)
+
+Executing: attachParameter(sdperimeter ("ps" "S") ("pd" "D") _pmos_25 shared)
+
+Executing: extractMOS("pmoscap1v" _pmoscap_12 (poly_conn "G") (pdiff_conn "S" "D") (nwel...
+
+Executing: attachParameter(w "w" _pmoscap_12)
+
+Executing: attachParameter(fw "fw" _pmoscap_12)
+
+Executing: attachParameter(simW "simW" _pmoscap_12)
+
+Executing: attachParameter(l "l" _pmoscap_12)
+
+Executing: extractMOS("pmoscap2v" _pmoscap_25 (poly_conn "G") (pdiff_conn "S" "D") (nwel...
+
+Executing: attachParameter(w "w" _pmoscap_25)
+
+Executing: attachParameter(fw "fw" _pmoscap_25)
+
+Executing: attachParameter(simW "simW" _pmoscap_25)
+
+Executing: attachParameter(l "l" _pmoscap_25)
+
+Executing: extractMOS("pmoscap1v3" _pmoscap_12_3 (poly_conn "G") (pdiff_conn "S" "D") (n...
+
+Executing: attachParameter(w "w" _pmoscap_12_3)
+
+Executing: attachParameter(fw "fw" _pmoscap_12_3)
+
+Executing: attachParameter(simW "simW" _pmoscap_12_3)
+
+Executing: attachParameter(l "l" _pmoscap_12_3)
+
+Executing: extractMOS("pmoscap2v3" _pmoscap_25_3 (poly_conn "G") (pdiff_conn "S" "D") (n...
+
+Executing: attachParameter(w "w" _pmoscap_25_3)
+
+Executing: attachParameter(fw "fw" _pmoscap_25_3)
+
+Executing: attachParameter(simW "simW" _pmoscap_25_3)
+
+Executing: attachParameter(l "l" _pmoscap_25_3)
+
+Executing: extractMOS("nmoscap1v" _nmoscap_12 (poly_conn "G") (ndiff_conn "S" "D") (psub...
+
+Executing: attachParameter(w "w" _nmoscap_12)
+
+Executing: attachParameter(fw "fw" _nmoscap_12)
+
+Executing: attachParameter(simW "simW" _nmoscap_12)
+
+Executing: attachParameter(l "l" _nmoscap_12)
+
+Executing: extractMOS("nmoscap2v" _nmoscap_25 (poly_conn "G") (ndiff_conn "S" "D") (psub...
+
+Executing: attachParameter(w "w" _nmoscap_25)
+
+Executing: attachParameter(fw "fw" _nmoscap_25)
+
+Executing: attachParameter(simW "simW" _nmoscap_25)
+
+Executing: attachParameter(l "l" _nmoscap_25)
+
+Executing: extractMOS("nmoscap1v3" _nmoscap_12_3 (poly_conn "G") (ndiff_conn "S" "D") (p...
+
+Executing: attachParameter(w "w" _nmoscap_12_3)
+
+Executing: attachParameter(fw "fw" _nmoscap_12_3)
+
+Executing: attachParameter(simW "simW" _nmoscap_12_3)
+
+Executing: attachParameter(l "l" _nmoscap_12_3)
+
+Executing: extractMOS("nmoscap2v3" _nmoscap_25_3 (poly_conn "G") (ndiff_conn "S" "D") (p...
+
+Executing: attachParameter(w "w" _nmoscap_25_3)
+
+Executing: attachParameter(fw "fw" _nmoscap_25_3)
+
+Executing: attachParameter(simW "simW" _nmoscap_25_3)
+
+Executing: attachParameter(l "l" _nmoscap_25_3)
+
+Executing: extractRES("ressndiff" _rndiff (ndiff_conn "PLUS" "MINUS") (psubstrate "B") (...
+
+Executing: attachParameter(r "r" _rndiff)
+
+Executing: attachParameter(segR "segR" _rndiff)
+
+Executing: attachParameter(w "w" _rndiff)
+
+Executing: attachParameter(segW "segW" _rndiff)
+
+Executing: attachParameter(effW "effW" _rndiff)
+
+Executing: attachParameter(l "l" _rndiff)
+
+Executing: attachParameter(segL "segL" _rndiff)
+
+Executing: attachParameter(effL "effL" _rndiff)
+
+Executing: extractRES("resnsndiff" _rndiff_nosal (ndiff_conn "PLUS" "MINUS") (psubstrate...
+
+Executing: attachParameter(r "r" _rndiff_nosal)
+
+Executing: attachParameter(segR "segR" _rndiff_nosal)
+
+Executing: attachParameter(w "w" _rndiff_nosal)
+
+Executing: attachParameter(segW "segW" _rndiff_nosal)
+
+Executing: attachParameter(effW "effW" _rndiff_nosal)
+
+Executing: attachParameter(l "l" _rndiff_nosal)
+
+Executing: attachParameter(segL "segL" _rndiff_nosal)
+
+Executing: attachParameter(effL "effL" _rndiff_nosal)
+
+Executing: extractRES("ressnpoly" _rnpoly (poly_conn "PLUS" "MINUS") (psubstrate "B") (c...
+
+Executing: attachParameter(r "r" _rnpoly)
+
+Executing: attachParameter(segR "segR" _rnpoly)
+
+Executing: attachParameter(w "w" _rnpoly)
+
+Executing: attachParameter(segW "segW" _rnpoly)
+
+Executing: attachParameter(effW "effW" _rnpoly)
+
+Executing: attachParameter(l "l" _rnpoly)
+
+Executing: attachParameter(segL "segL" _rnpoly)
+
+Executing: attachParameter(effL "effL" _rnpoly)
+
+Executing: extractRES("ressnpoly" _rnpolynw (poly_conn "PLUS" "MINUS") (nwell_conn "B") ...
+
+Executing: attachParameter(r "r" _rnpolynw)
+
+Executing: attachParameter(segR "segR" _rnpolynw)
+
+Executing: attachParameter(w "w" _rnpolynw)
+
+Executing: attachParameter(segW "segW" _rnpolynw)
+
+Executing: attachParameter(effW "effW" _rnpolynw)
+
+Executing: attachParameter(l "l" _rnpolynw)
+
+Executing: attachParameter(segL "segL" _rnpolynw)
+
+Executing: attachParameter(effL "effL" _rnpolynw)
+
+Executing: extractRES("resnsnpoly" _rnpoly_nosal (poly_conn "PLUS" "MINUS") (psubstrate ...
+
+Executing: attachParameter(r "r" _rnpoly_nosal)
+
+Executing: attachParameter(segR "segR" _rnpoly_nosal)
+
+Executing: attachParameter(w "w" _rnpoly_nosal)
+
+Executing: attachParameter(segW "segW" _rnpoly_nosal)
+
+Executing: attachParameter(effW "effW" _rnpoly_nosal)
+
+Executing: attachParameter(l "l" _rnpoly_nosal)
+
+Executing: attachParameter(segL "segL" _rnpoly_nosal)
+
+Executing: attachParameter(effL "effL" _rnpoly_nosal)
+
+Executing: extractRES("resnsnpoly" _rnpolynw_nosal (poly_conn "PLUS" "MINUS") (nwell_con...
+
+Executing: attachParameter(r "r" _rnpolynw_nosal)
+
+Executing: attachParameter(segR "segR" _rnpolynw_nosal)
+
+Executing: attachParameter(w "w" _rnpolynw_nosal)
+
+Executing: attachParameter(segW "segW" _rnpolynw_nosal)
+
+Executing: attachParameter(effW "effW" _rnpolynw_nosal)
+
+Executing: attachParameter(l "l" _rnpolynw_nosal)
+
+Executing: attachParameter(segL "segL" _rnpolynw_nosal)
+
+Executing: attachParameter(effL "effL" _rnpolynw_nosal)
+
+Executing: extractRES("resspdiff" _rpdiff (pdiff_conn "PLUS" "MINUS") (nwell_conn "B") (...
+
+Executing: attachParameter(r "r" _rpdiff)
+
+Executing: attachParameter(segR "segR" _rpdiff)
+
+Executing: attachParameter(w "w" _rpdiff)
+
+Executing: attachParameter(segW "segW" _rpdiff)
+
+Executing: attachParameter(effW "effW" _rpdiff)
+
+Executing: attachParameter(l "l" _rpdiff)
+
+Executing: attachParameter(segL "segL" _rpdiff)
+
+Executing: attachParameter(effL "effL" _rpdiff)
+
+Executing: extractRES("resnspdiff" _rpdiff_nosal (pdiff_conn "PLUS" "MINUS") (nwell_conn...
+
+Executing: attachParameter(r "r" _rpdiff_nosal)
+
+Executing: attachParameter(segR "segR" _rpdiff_nosal)
+
+Executing: attachParameter(w "w" _rpdiff_nosal)
+
+Executing: attachParameter(segW "segW" _rpdiff_nosal)
+
+Executing: attachParameter(effW "effW" _rpdiff_nosal)
+
+Executing: attachParameter(l "l" _rpdiff_nosal)
+
+Executing: attachParameter(segL "segL" _rpdiff_nosal)
+
+Executing: attachParameter(effL "effL" _rpdiff_nosal)
+
+Executing: extractRES("ressppoly" _rppoly (poly_conn "PLUS" "MINUS") (psubstrate "B") (c...
+
+Executing: attachParameter(r "r" _rppoly)
+
+Executing: attachParameter(segR "segR" _rppoly)
+
+Executing: attachParameter(w "w" _rppoly)
+
+Executing: attachParameter(segW "segW" _rppoly)
+
+Executing: attachParameter(effW "effW" _rppoly)
+
+Executing: attachParameter(l "l" _rppoly)
+
+Executing: attachParameter(segL "segL" _rppoly)
+
+Executing: attachParameter(effL "effL" _rppoly)
+
+Executing: extractRES("ressppoly" _rppolynw (poly_conn "PLUS" "MINUS") (nwell_conn "B") ...
+
+Executing: attachParameter(r "r" _rppolynw)
+
+Executing: attachParameter(segR "segR" _rppolynw)
+
+Executing: attachParameter(w "w" _rppolynw)
+
+Executing: attachParameter(segW "segW" _rppolynw)
+
+Executing: attachParameter(effW "effW" _rppolynw)
+
+Executing: attachParameter(l "l" _rppolynw)
+
+Executing: attachParameter(segL "segL" _rppolynw)
+
+Executing: attachParameter(effL "effL" _rppolynw)
+
+Executing: extractRES("resnsppoly" _rppoly_nosal (poly_conn "PLUS" "MINUS") (psubstrate ...
+
+Executing: attachParameter(r "r" _rppoly_nosal)
+
+Executing: attachParameter(segR "segR" _rppoly_nosal)
+
+Executing: attachParameter(w "w" _rppoly_nosal)
+
+Executing: attachParameter(segW "segW" _rppoly_nosal)
+
+Executing: attachParameter(effW "effW" _rppoly_nosal)
+
+Executing: attachParameter(l "l" _rppoly_nosal)
+
+Executing: attachParameter(segL "segL" _rppoly_nosal)
+
+Executing: attachParameter(effL "effL" _rppoly_nosal)
+
+Executing: extractRES("resnsppoly" _rppolynw_nosal (poly_conn "PLUS" "MINUS") (nwell_con...
+
+Executing: attachParameter(r "r" _rppolynw_nosal)
+
+Executing: attachParameter(segR "segR" _rppolynw_nosal)
+
+Executing: attachParameter(w "w" _rppolynw_nosal)
+
+Executing: attachParameter(segW "segW" _rppolynw_nosal)
+
+Executing: attachParameter(effW "effW" _rppolynw_nosal)
+
+Executing: attachParameter(l "l" _rppolynw_nosal)
+
+Executing: attachParameter(segL "segL" _rppolynw_nosal)
+
+Executing: attachParameter(effL "effL" _rppolynw_nosal)
+
+Executing: extractRES("resnwsti" _rnwellsti (nwell_conn "PLUS" "MINUS") (psubstrate "B")...
+
+Executing: attachParameter(r "r" _rnwellsti)
+
+Executing: attachParameter(segR "segR" _rnwellsti)
+
+Executing: attachParameter(w "w" _rnwellsti)
+
+Executing: attachParameter(segW "segW" _rnwellsti)
+
+Executing: attachParameter(effW "effW" _rnwellsti)
+
+Executing: attachParameter(l "l" _rnwellsti)
+
+Executing: attachParameter(segL "segL" _rnwellsti)
+
+Executing: attachParameter(effL "effL" _rnwellsti)
+
+Executing: extractRES("resnwoxide" _rnwellod (nwell_conn "PLUS" "MINUS") (psubstrate "B"...
+
+Executing: attachParameter(r "r" _rnwellod)
+
+Executing: attachParameter(segR "segR" _rnwellod)
+
+Executing: attachParameter(w "w" _rnwellod)
+
+Executing: attachParameter(segW "segW" _rnwellod)
+
+Executing: attachParameter(effW "effW" _rnwellod)
+
+Executing: attachParameter(l "l" _rnwellod)
+
+Executing: attachParameter(segL "segL" _rnwellod)
+
+Executing: attachParameter(effL "effL" _rnwellod)
+
+Executing: extractRES("resm1" _resm1 (metal1_conn "PLUS" "MINUS") (cellView "resm1 ivpce...
+
+Executing: attachParameter(r "r" _resm1)
+
+Executing: attachParameter(segR "segR" _resm1)
+
+Executing: attachParameter(w "w" _resm1)
+
+Executing: attachParameter(segW "segW" _resm1)
+
+Executing: attachParameter(effW "effW" _resm1)
+
+Executing: attachParameter(l "l" _resm1)
+
+Executing: attachParameter(segL "segL" _resm1)
+
+Executing: attachParameter(effL "effL" _resm1)
+
+Executing: extractRES("resm2" _resm2 (metal2_conn "PLUS" "MINUS") (cellView "resm2 ivpce...
+
+Executing: attachParameter(r "r" _resm2)
+
+Executing: attachParameter(segR "segR" _resm2)
+
+Executing: attachParameter(w "w" _resm2)
+
+Executing: attachParameter(segW "segW" _resm2)
+
+Executing: attachParameter(effW "effW" _resm2)
+
+Executing: attachParameter(l "l" _resm2)
+
+Executing: attachParameter(segL "segL" _resm2)
+
+Executing: attachParameter(effL "effL" _resm2)
+
+Executing: extractRES("resm3" _resm3 (metal3_conn "PLUS" "MINUS") (cellView "resm3 ivpce...
+
+Executing: attachParameter(r "r" _resm3)
+
+Executing: attachParameter(segR "segR" _resm3)
+
+Executing: attachParameter(w "w" _resm3)
+
+Executing: attachParameter(segW "segW" _resm3)
+
+Executing: attachParameter(effW "effW" _resm3)
+
+Executing: attachParameter(l "l" _resm3)
+
+Executing: attachParameter(segL "segL" _resm3)
+
+Executing: attachParameter(effL "effL" _resm3)
+
+Executing: extractRES("resm4" _resm4 (metal4_conn "PLUS" "MINUS") (cellView "resm4 ivpce...
+
+Executing: attachParameter(r "r" _resm4)
+
+Executing: attachParameter(segR "segR" _resm4)
+
+Executing: attachParameter(w "w" _resm4)
+
+Executing: attachParameter(segW "segW" _resm4)
+
+Executing: attachParameter(effW "effW" _resm4)
+
+Executing: attachParameter(l "l" _resm4)
+
+Executing: attachParameter(segL "segL" _resm4)
+
+Executing: attachParameter(effL "effL" _resm4)
+
+Executing: extractRES("resm5" _resm5 (metal5_conn "PLUS" "MINUS") (cellView "resm5 ivpce...
+
+Executing: attachParameter(r "r" _resm5)
+
+Executing: attachParameter(segR "segR" _resm5)
+
+Executing: attachParameter(w "w" _resm5)
+
+Executing: attachParameter(segW "segW" _resm5)
+
+Executing: attachParameter(effW "effW" _resm5)
+
+Executing: attachParameter(l "l" _resm5)
+
+Executing: attachParameter(segL "segL" _resm5)
+
+Executing: attachParameter(effL "effL" _resm5)
+
+Executing: extractRES("resm6" _resm6 (metal6_conn "PLUS" "MINUS") (cellView "resm6 ivpce...
+
+Executing: attachParameter(r "r" _resm6)
+
+Executing: attachParameter(segR "segR" _resm6)
+
+Executing: attachParameter(w "w" _resm6)
+
+Executing: attachParameter(segW "segW" _resm6)
+
+Executing: attachParameter(effW "effW" _resm6)
+
+Executing: attachParameter(l "l" _resm6)
+
+Executing: attachParameter(segL "segL" _resm6)
+
+Executing: attachParameter(effL "effL" _resm6)
+
+Executing: extractRES("resm7" _resm7 (metal7_conn "PLUS" "MINUS") (cellView "resm7 ivpce...
+
+Executing: attachParameter(r "r" _resm7)
+
+Executing: attachParameter(segR "segR" _resm7)
+
+Executing: attachParameter(w "w" _resm7)
+
+Executing: attachParameter(segW "segW" _resm7)
+
+Executing: attachParameter(effW "effW" _resm7)
+
+Executing: attachParameter(l "l" _resm7)
+
+Executing: attachParameter(segL "segL" _resm7)
+
+Executing: attachParameter(effL "effL" _resm7)
+
+Executing: extractRES("resm8" _resm8 (metal8_conn "PLUS" "MINUS") (cellView "resm8 ivpce...
+
+Executing: attachParameter(r "r" _resm8)
+
+Executing: attachParameter(segR "segR" _resm8)
+
+Executing: attachParameter(w "w" _resm8)
+
+Executing: attachParameter(segW "segW" _resm8)
+
+Executing: attachParameter(effW "effW" _resm8)
+
+Executing: attachParameter(l "l" _resm8)
+
+Executing: attachParameter(segL "segL" _resm8)
+
+Executing: attachParameter(effL "effL" _resm8)
+
+Executing: extractRES("resm9" _resm9 (metal9_conn "PLUS" "MINUS") (cellView "resm9 ivpce...
+
+Executing: attachParameter(r "r" _resm9)
+
+Executing: attachParameter(segR "segR" _resm9)
+
+Executing: attachParameter(w "w" _resm9)
+
+Executing: attachParameter(segW "segW" _resm9)
+
+Executing: attachParameter(effW "effW" _resm9)
+
+Executing: attachParameter(l "l" _resm9)
+
+Executing: attachParameter(segL "segL" _resm9)
+
+Executing: attachParameter(effL "effL" _resm9)
+
+Executing: extractDIODE("ndio" _ndio (psubstrate "PLUS") (ndiff_conn "MINUS") (cellView ...
+
+Executing: attachParameter(area "area" _ndio)
+
+Executing: extractDIODE("pdio" _pdio (pdiff_conn "PLUS") (nwell_conn "MINUS") (cellView ...
+
+Executing: attachParameter(area "area" _pdio)
+
+Executing: extractBJT("vpnp2" _vpnp2 (psubstrate "C") (nwell_conn "B") (pdiff_conn "E") ...
+
+Executing: attachParameter(area "area" _vpnp2)
+
+Executing: extractBJT("vpnp5" _vpnp5 (psubstrate "C") (nwell_conn "B") (pdiff_conn "E") ...
+
+Executing: attachParameter(area "area" _vpnp5)
+
+Executing: extractBJT("vpnp10" _vpnp10 (psubstrate "C") (nwell_conn "B") (pdiff_conn "E"...
+
+Executing: attachParameter(area "area" _vpnp10)
+
+Executing: extractBJT("pnp" _pnp (psubstrate "C") (nwell_conn "B") (pdiff_conn "E") (cel...
+
+Executing: attachParameter(area "area" _pnp)
+
+Executing: extractBJT("npn" _npn (npn_coll "C") (npn_base "B") (npn_emit "E") (cellView ...
+
+Executing: attachParameter(area "area" _npn)
+
+Executing: extractCAP("mimcap" MIMCAP (CapMetal "PLUS") (metal2_conn "MINUS") (cellView ...
+
+Executing: attachParameter(w "w" MIMCAP)
+
+Executing: attachParameter(l "l" MIMCAP)
+
+Executing: attachParameter(c "c" MIMCAP)
+
+Executing: attachParameter(area "area" MIMCAP)
+
+Executing: attachParameter(perim "perim" MIMCAP)
+
+Executing: (saveInterconnect (Oxide "Oxide"))
+
+Executing: (saveInterconnect (Oxide_thk "Oxide_thk"))
+
+Executing: (saveInterconnect (Metal9_p "Metal9"))
+
+Executing: (saveInterconnect (metal9_conn "Metal9"))
+
+Executing: (saveInterconnect (Metal8_p "Metal8"))
+
+Executing: (saveInterconnect (metal8_conn "Metal8"))
+
+Executing: (saveInterconnect (Metal7_p "Metal7"))
+
+Executing: (saveInterconnect (metal7_conn "Metal7"))
+
+Executing: (saveInterconnect (Metal6_p "Metal6"))
+
+Executing: (saveInterconnect (metal6_conn "Metal6"))
+
+Executing: (saveInterconnect (Metal5_p "Metal5"))
+
+Executing: (saveInterconnect (metal5_conn "Metal5"))
+
+Executing: (saveInterconnect (Metal4_p "Metal4"))
+
+Executing: (saveInterconnect (metal4_conn "Metal4"))
+
+Executing: (saveInterconnect (Metal3_p "Metal3"))
+
+Executing: (saveInterconnect (metal3_conn "Metal3"))
+
+Executing: (saveInterconnect (Metal2_p "Metal2"))
+
+Executing: (saveInterconnect (metal2_conn "Metal2"))
+
+Executing: (saveInterconnect (Metal1_p "Metal1"))
+
+Executing: (saveInterconnect (metal1_conn "Metal1"))
+
+Executing: (saveInterconnect (pdiff_conn "Pimp"))
+
+Executing: (saveInterconnect (ndiff_conn "Nimp"))
+
+Executing: (saveInterconnect (nwell_conn "Nwell"))
+
+Executing: (saveInterconnect (poly_conn "Poly"))
+
+Executing: (saveInterconnect (npn_emit "Nimp"))
+
+Executing: (saveInterconnect (npn_coll "Nwell"))
+
+Finished running rules. Task processor time in main process:
+cpu: 0.25  elap: 0  pf: 0  in: 8  out: 632  virt: 143M  phys: 749M
+
+No output post-processing: This is not a DRC run
+
+Finished building the persistent database.
+cpu: 0.01  elap: 0  pf: 0  in: 0  out: 6448  virt: 147M  phys: 768M
+
+
+*****  aveng terminated normally  *****
+
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/aveng
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/avrpt /home/klu/Desktop/SDC_project/XOR_LVS.rsf -exec1
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+@(#)$CDS: avrpt_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:29 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/avrpt on Wed Jun 19 16:06:51 2024
+
+
+   Creating Error Database 'XOR_LVS'...
+
+   Reading VDB ...
+2024/06/19 16:06:51 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:51 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+--------------------------------------------------------------------------------
+Rule      Message                                    FlatCount     RealCount
+--------------------------------------------------------------------------------
+(    1)  dataAuditErrors                                     0            0
+(    2)  ptap_StampErrorFloat                                0            0
+(    3)  ptap_StampErrorMult                                 0            0
+(    4)  ptap_StampErrorConnect                              0            0
+(    5)  psubstrate_StampErrorFloat                          0            0
+(    6)  psubstrate_StampErrorMult                           0            0
+(    7)  psubstrate_StampErrorConnect                        0            0
+(    8)  ntap_StampErrorFloat                                0            0
+(    9)  ntap_StampErrorMult                                 0            0
+(   10)  ntap_StampErrorConnect                              0            0
+(   11)  nwell_conn_StampErrorFloat                          0            0
+(   12)  nwell_conn_StampErrorMult                           0            0
+(   13)  nwell_conn_StampErrorConnect                        0            0
+(   14)  nb_tap_StampErrorFloat                              0            0
+(   15)  nb_tap_StampErrorMult                               0            0
+(   16)  nb_tap_StampErrorConnect                            0            0
+(   17)  Nburied_StampErrorFloat                             0            0
+(   18)  Nburied_StampErrorMult                              0            0
+(   19)  Nburied_StampErrorConnect                           0            0
+(   20)  malformed device _nmos_12                           0            0
+(   21)  malformed device _nmos_12_hvt                       0            0
+(   22)  malformed device _nmos_12_iso                       0            0
+(   23)  malformed device _nmos_12_native                    0            0
+(   24)  malformed device _nmos_25                           0            0
+(   25)  malformed device _nmos_25_native                    0            0
+(   26)  malformed device _pmos_12                           0            0
+(   27)  malformed device _pmos_12_hvt                       0            0
+(   28)  malformed device _pmos_25                           0            0
+(   29)  malformed device _pmoscap_12                        0            0
+(   30)  malformed device _pmoscap_25                        0            0
+(   31)  malformed device _pmoscap_12_3                      0            0
+(   32)  malformed device _pmoscap_25_3                      0            0
+(   33)  malformed device _nmoscap_12                        0            0
+(   34)  malformed device _nmoscap_25                        0            0
+(   35)  malformed device _nmoscap_12_3                      0            0
+(   36)  malformed device _nmoscap_25_3                      0            0
+(   37)  malformed device _rndiff                            0            0
+(   38)  malformed device _rndiff_nosal                      0            0
+(   39)  malformed device _rnpoly                            0            0
+(   40)  malformed device _rnpolynw                          0            0
+(   41)  malformed device _rnpoly_nosal                      0            0
+(   42)  malformed device _rnpolynw_nosal                    0            0
+(   43)  malformed device _rpdiff                            0            0
+(   44)  malformed device _rpdiff_nosal                      0            0
+(   45)  malformed device _rppoly                            0            0
+(   46)  malformed device _rppolynw                          0            0
+(   47)  malformed device _rppoly_nosal                      0            0
+(   48)  malformed device _rppolynw_nosal                    0            0
+(   49)  malformed device _rnwellsti                         0            0
+(   50)  malformed device _rnwellod                          0            0
+(   51)  malformed device _resm1                             0            0
+(   52)  malformed device _resm2                             0            0
+(   53)  malformed device _resm3                             0            0
+(   54)  malformed device _resm4                             0            0
+(   55)  malformed device _resm5                             0            0
+(   56)  malformed device _resm6                             0            0
+(   57)  malformed device _resm7                             0            0
+(   58)  malformed device _resm8                             0            0
+(   59)  malformed device _resm9                             0            0
+(   60)  malformed device _ndio                              0            0
+(   61)  malformed device _pdio                              0            0
+(   62)  malformed device _vpnp2                             0            0
+(   63)  malformed device _vpnp5                             0            0
+(   64)  malformed device _vpnp10                            0            0
+(   65)  malformed device _pnp                               0            0
+(   66)  malformed device _npn                               0            0
+(   67)  malformed device MIMCAP                             0            0
+(   68)  unstable device for MIMCAP_CAP_48                   0            0
+(   70)  unstable device for _npn_BJT_47                     0            0
+(   72)  unstable device for _pnp_BJT_46                     0            0
+(   74)  unstable device for _vpnp10_BJT_45                  0            0
+(   76)  unstable device for _vpnp5_BJT_44                   0            0
+(   78)  unstable device for _vpnp2_BJT_43                   0            0
+(   80)  unstable device for _pdio_DIODE_42                  0            0
+(   82)  unstable device for _ndio_DIODE_41                  0            0
+(   84)  unstable device for _resm9_RES_40                   0            0
+(   86)  unstable device for _resm8_RES_39                   0            0
+(   88)  unstable device for _resm7_RES_38                   0            0
+(   90)  unstable device for _resm6_RES_37                   0            0
+(   92)  unstable device for _resm5_RES_36                   0            0
+(   94)  unstable device for _resm4_RES_35                   0            0
+(   96)  unstable device for _resm3_RES_34                   0            0
+(   98)  unstable device for _resm2_RES_33                   0            0
+(  100)  unstable device for _resm1_RES_32                   0            0
+(  102)  unstable device for _rnwellod_RES_31                0            0
+(  104)  unstable device for _rnwellsti_RES_30               0            0
+(  106)  unstable device for _rppolynw_nosal_RES_            0            0
+(  108)  unstable device for _rppoly_nosal_RES_28            0            0
+(  110)  unstable device for _rppolynw_RES_27                0            0
+(  112)  unstable device for _rppoly_RES_26                  0            0
+(  114)  unstable device for _rpdiff_nosal_RES_25            0            0
+(  116)  unstable device for _rpdiff_RES_24                  0            0
+(  118)  unstable device for _rnpolynw_nosal_RES_            0            0
+(  120)  unstable device for _rnpoly_nosal_RES_22            0            0
+(  122)  unstable device for _rnpolynw_RES_21                0            0
+(  124)  unstable device for _rnpoly_RES_20                  0            0
+(  126)  unstable device for _rndiff_nosal_RES_19            0            0
+(  128)  unstable device for _rndiff_RES_18                  0            0
+(  130)  unstable device for _nmoscap_25_3_MOS_17            0            0
+(  132)  unstable device for _nmoscap_12_3_MOS_16            0            0
+(  134)  unstable device for _nmoscap_25_MOS_15              0            0
+(  136)  unstable device for _nmoscap_12_MOS_14              0            0
+(  138)  unstable device for _pmoscap_25_3_MOS_13            0            0
+(  140)  unstable device for _pmoscap_12_3_MOS_12            0            0
+(  142)  unstable device for _pmoscap_25_MOS_11              0            0
+(  144)  unstable device for _pmoscap_12_MOS_10              0            0
+(  146)  unstable device for _pmos_25_MOS_9                  0            0
+(  148)  unstable device for _pmos_12_hvt_MOS_8              0            0
+(  150)  unstable device for _pmos_12_MOS_7                  0            0
+(  152)  unstable device for _nmos_25_native_MOS_            0            0
+(  154)  unstable device for _nmos_25_MOS_5                  0            0
+(  156)  unstable device for _nmos_12_native_MOS_            0            0
+(  158)  unstable device for _nmos_12_iso_Device_            0            0
+(  160)  unstable device for _nmos_12_hvt_MOS_2              0            0
+(  162)  unstable device for _nmos_12_MOS_1                  0            0
+--------------------------------------------------------------------------------
+Total  errors:                                               0            0
+--------------------------------------------------------------------------------
+
+   Finished creating Error Database ...
+
+   Writing Report into ./XOR_LVS.err ...
+
+avrpt cpu sec:    0.05  elapsed:     0  virtual:    93M
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/avrpt
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/avcallproc /home/klu/Desktop/SDC_project/XOR_LVS.rsf -exec1 -LVS -cdslib /home/klu/Desktop/SDC_project/cds.lib
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/avcallproc
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/avnx /home/klu/Desktop/SDC_project/XOR_LVS.rsf -exec1 -LVS -cdslib /home/klu/Desktop/SDC_project/cds.lib
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+Checking out license for Assura_LVS
+Checking out license for Phys_Ver_Sys_LVS_XL
+*WARNING* Failed to obtain license for Assura_LVS
+@(#)$CDS: avnx_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:29 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on cad6 from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/avnx on Wed Jun 19 16:06:52 2024
+
+avnx started...
+2024/06/19 16:06:52 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2024/06/19 16:06:52 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+cpu: 0.07  elap: 0  pf: 0  in: 0  out: 24  virt: 528M  phys: 959M
+
+Run time =  0.00 seconds
+CPU time =  0.08 seconds
+
+                  End of Summary Report
+
+************************************************************************
+cpu: 0.01  elap: 0  pf: 0  in: 0  out: 12968  virt: 459M  phys: 959M
+***** avnx terminated normally ***** 
+
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/avnx
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/nvn /home/klu/Desktop/SDC_project/XOR_LVS.rsf -postExtract -exec1 -cdslib /home/klu/Desktop/SDC_project/cds.lib
+Checking out license for Assura_LVS
+Checking out license for Phys_Ver_Sys_LVS_XL
+@(#)$CDS: nvn_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+run on cad6 at Wed Jun 19 16:06:52 2024
+  
+*************************************************************** 
+  
+ GENERIC PDK Assura Compare Rules file 
+  Cadence Design Systems shall not be liable for the accuracy 
+  of this LVS rule file or its ability to capture errors.     
+  The user is responsible for thoroughly testing and          
+  implementing its features.                                  
+ 
+*************************************************************** 
+ 
+Reading schematic network
+Reading layout network
+ inputting network XOR_LVS.ldb
+Preprocessing schematic network phase 1
+Preprocessing layout network phase 1
+Preprocessing schematic network phase 2
+Preprocessing layout network phase 2
+Top cell  Ex_OR_Gate schematic 4_BIT_ALU vs Ex_OR_Gate layout 4_BIT_ALU
+Schematic and Layout Match
+cpu=0.00m  wall=0.00m  mem=62.88mb
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/nvn
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/vldbToRpa XOR_LVS.snn XOR_LVS.tre XOR_LVS.cel
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/vldbToRpa
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/vldbToRpa XOR_LVS.lnn XOR_LVS.tre2 XOR_LVS.cel2
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/vldbToRpa
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/ercChk /home/klu/Desktop/SDC_project/XOR_LVS.rsf
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+*WARNING* The directory: '/home/klu/xyz' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+*WARNING* The directory: '/home/klu/phani' does not exist
+	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+Loading gpdk090/libInit.il ...
+	Loading gpdk090/loadCxt.ile ... done!
+	Loading context 'gpdk090' from library 'gpdk090' ... done!
+	Loading context 'pdkUtils' from library 'gpdk090' ... done!
+	Loading gpdk090/gpdk090_customFilter.il ... done!
+	Loading gpdk090/.simrc ... done!
+	Loading gpdk090/libInitCustomExit.il ... 	Loading Environment Settings ...
+*WARNING* envSetVal: Can't set the value of variable 'extractVerifySubstrate',
+	in tool[.partition] 'layout' - it has not been registered.
+*WARNING* Master env file /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/spectre/.cdsenv is not readable
+*WARNING* envSetVal: could not find tool[.partition] 'spectre.envOpts'
+*WARNING* Cannot find /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/hspiceD directory to load environment variables
+	Loading gpdk090/gpdk090_PDKRegistrations.il ... done!
+
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 90nm PDK                       *           
+  *                        (gpdk090)                          *           
+  *                                                           *           
+  *************************************************************           
+	
+
+	Version : 4.6
+
+	Build date: 10-FEB-2011
+
+done!
+Loaded gpdk090/libInit.il successfully!
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/ercChk
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/avcallproc /home/klu/Desktop/SDC_project/XOR_LVS.rsf -trp -exec1
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Finished /home/install/ASSURA41//tools.lnx86/assura/bin/avcallproc
+
+
+Assura LVS terminated normally.
+
+
+
+Run ended: Wed Jun 19 16:06:54 2024
+
+*****  Assura terminated normally  *****
+

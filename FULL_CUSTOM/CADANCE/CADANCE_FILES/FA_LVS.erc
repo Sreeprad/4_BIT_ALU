@@ -1,0 +1,14 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'FA layout 4_BIT_ALU':
+  info: Assign pin label "GND" at (9.2000, 0.1500) to layer `Metal1_p'.
+  info: Assign pin label "A" at (0.1600, 10.9400) to layer `Metal1_p'.
+  info: Assign pin label "B" at (0.1000, 12.8000) to layer `Metal1_p'.
+  info: Assign pin label "C" at (0.0600, 16.4000) to layer `Metal1_p'.
+  info: Assign pin label "Carry" at (17.9000, 6.3600) to layer `Metal1_p'.
+  info: Assign pin label "VDD" at (9.2000, 17.0500) to layer `Metal1_p'.
+  info: Assign pin label "Sum" at (18.1200, 9.7000) to layer `Metal1_p'.
+
+***** End of Label Report *****
+

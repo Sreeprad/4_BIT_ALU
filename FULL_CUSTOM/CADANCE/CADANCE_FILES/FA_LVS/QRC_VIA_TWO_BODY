@@ -1,0 +1,4 @@
+2 3
+np_rpoly_conn np_rmetal1_conn np_rmetal2_conn
+rVia1,X 2 3
+rcont_poly,X 1 2

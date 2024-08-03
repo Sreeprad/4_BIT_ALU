@@ -1,0 +1,5 @@
+"pmos1v(MOS)" "pmos1v(MOS)"
+"nmos1v(MOS)" "nmos1v(MOS)"
+"OR_GATE layout 4_BIT_ALU" "OR_GATE schematic 4_BIT_ALU" "nmos1v(MOS)" "pmos1v(MOS)"
+Devices filtered from layout
+"TIE"

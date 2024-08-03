@@ -1,0 +1,206 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 LVS saved state
+;----------------------------------------------------------------------------
+
+
+
+vuiLVSFormTable = '(
+	schematicSource  "DFII"
+	layoutSource  "DFII"
+	runName  "INV_LVS"
+	runDir  "."
+	machineLoc  "local"
+	viewRules  t
+	technologyField  "gpdk090"
+	runsetField  "default"
+	extract  "/home/install/FOUNDRY/analog/90nm/assura/extract.rul"
+	compare  "/home/install/FOUNDRY/analog/90nm/assura/compare.rul"
+	switches  ""
+	bind  "/home/install/FOUNDRY/analog/90nm/assura/bind.rul"
+	rsfInclude  "/home/install/FOUNDRY/analog/90nm/assura/LVSinclude.rsf"
+	varTag  "None"
+	varVal  ""
+	varDefVal  ""
+	varDesc  ""
+	avView  nil
+	avCompareView  nil
+	additionalFunctionsButton  nil
+	schLibrary  "4_BIT_ALU"
+	schCell  "INV"
+	schView  "schematic"
+	existingSchNetlist  nil
+	useVerilogTopCell  nil
+	layLibrary  "4_BIT_ALU"
+	layCell  "INV"
+	layView  "layout"
+	layUseExistingNL  nil
+	extractButton  nil
+	compareButton  nil
+	bindButton  nil
+	rsfIncludeButton  nil
+)
+
+
+
+
+vuiLVSFormVarTable = '(
+)
+
+
+additionalFunctionsFieldsTable = '(
+	AFflattenCellFlag  nil
+	AFjoinableNetsFlag  nil
+	AFoutFileFlag  nil
+	AFchangeLabelFlag  nil
+	AFmustJoinNetFlag  nil
+	AFdeleteCellTextFlag  nil
+)
+
+
+vuiLVSFormAdditionalFunctionsTable = '(
+     flattenCell  nil
+     joinableNets nil
+     changeLabel  nil
+     mustJoinNet  nil
+     outFile      nil
+     deleteCellText nil
+)
+
+
+
+vuiLVSschNLoptionFormTable = '(
+	templateFileOverride  nil
+	templateFile  ""
+	viewList  "auLvs schematic symbol"
+	stopList  "auLvs"
+	deviceInformation  ""
+	avSimName  ""
+	avMFactorPropName  ""
+	avVerilogRefLibName  ""
+	avCdlGlobalModeCyclic  "floating"
+	ignoreNamePrefix  (nil)
+	avErrorOnMissingMaster  (nil)
+	avUseModelPropOnInstance  (nil)
+	disableWildCardPG  (nil)
+	verilogBusMapIEEE  (t)
+	netlistCyclic  "CDL"
+	netlistFileHolding  ""
+	netlistLib  ""
+	netlistFile  nil
+	deviceInformationButton  nil
+)
+
+
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 Template Version 1
+;----------------------------------------------------------------------------
+
+vuiLVSOptions = '(
+     (( ?avrpt ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( avrpt t )
+             ( spacer "  " )
+             ( spacer2 "  " )
+             ( printError nil )
+             ( useOption nil )
+             ( maxErrorShapesPerCell 1000 )
+     )
+     (( ?dbuPerUU ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( dbuPerUU 2000.0 )
+     )
+     (( ?joinPins ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( joinPins "Top" )
+     )
+     (( ?overwrite ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( overwrite t )
+     )
+     (( ?textLevel ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( label "textLevel" )
+             ( from 0 )
+             ( to 0 )
+     )
+     (( ?textPriOnly ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( textPriOnly t )
+     )
+     (( ?userUnits ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( userUnits "micron" )
+     )
+)
+
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 Template Version 1
+;----------------------------------------------------------------------------
+
+vuiAVCGenOptions = '(
+     (( listXRef ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( listXRef t )
+     )
+)
+
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 Template Version 1
+;----------------------------------------------------------------------------
+
+vuiAVCLayOptions = '(
+)
+
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 Template Version 1
+;----------------------------------------------------------------------------
+
+vuiAVCSchOptions = '(
+)
+

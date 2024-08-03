@@ -1,0 +1,51 @@
+text Metal9_p_text attach Metal9_p metal9_conn
+text Metal9_p_pintext attach Metal9_p metal9_conn
+text Metal8_p_text attach Metal8_p metal8_conn
+text Metal8_p_pintext attach Metal8_p metal8_conn
+text Metal7_p_text attach Metal7_p metal7_conn
+text Metal7_p_pintext attach Metal7_p metal7_conn
+text Metal6_p_text attach Metal6_p metal6_conn
+text Metal6_p_pintext attach Metal6_p metal6_conn
+text Metal5_p_text attach Metal5_p metal5_conn
+text Metal5_p_pintext attach Metal5_p metal5_conn
+text Metal4_p_text attach Metal4_p metal4_conn
+text Metal4_p_pintext attach Metal4_p metal4_conn
+text Metal3_p_text attach Metal3_p metal3_conn
+text Metal3_p_pintext attach Metal3_p metal3_conn
+text Metal2_p_text attach Metal2_p metal2_conn
+text Metal2_p_pintext attach Metal2_p metal2_conn
+text Metal1_p_text attach Metal1_p metal1_conn
+text Metal1_p_pintext attach Metal1_p metal1_conn
+connect Bondpad metal9_conn by bp_tap
+connect Metal9_p metal9_conn by Metal9_v
+connect metal9_conn metal8_conn by Via8
+connect Metal8_p metal8_conn by Metal8_v
+connect metal8_conn metal7_conn by Via7
+connect Metal7_p metal7_conn by Metal7_v
+connect metal7_conn metal6_conn by Via6
+connect Metal6_p metal6_conn by Metal6_v
+connect metal6_conn metal5_conn by Via5
+connect Metal5_p metal5_conn by Metal5_v
+connect metal5_conn metal4_conn by Via4
+connect Metal4_p metal4_conn by Metal4_v
+connect metal4_conn metal3_conn by Via3
+connect Metal3_p metal3_conn by Metal3_v
+connect metal3_conn CapMetal by via2_cap
+connect metal3_conn metal2_conn by via2_out_capInd
+connect Metal2_p metal2_conn by Metal2_v
+connect metal2_conn metal1_conn by Via1
+connect metal2_conn ind_term1 by ind_term1_tap
+connect metal2_conn ind_term2 by ind_term2_tap
+connect Metal1_p metal1_conn by Metal1_v
+connect metal1_conn poly_conn by cont_poly
+connect metal1_conn pdiff_conn by cont_pdiff
+connect metal1_conn ndiff_conn by cont_ndiff
+connect metal1_conn npn_emit by cont_emit
+connect metal1_conn npn_base by cont_base
+connect metal1_conn npn_coll by cont_coll
+stamp ptap by pdiff_conn
+stamp psubstrate by ptap
+stamp ntap by ndiff_conn
+stamp nwell_conn by ntap
+stamp nb_tap by nwell_conn
+stamp Nburied by nb_tap

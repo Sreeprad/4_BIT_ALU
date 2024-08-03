@@ -1,0 +1,27 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; avParameter Section
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avParameters(
+  ?inputLayout ( "df2" "4_BIT_ALU" )
+  ?cellName "MUX_4_1"
+  ?viewName "layout"
+  ?runName "MUX_4X1_DRC"
+  ?technology "gpdk090"
+  ?techLib "/home/install/FOUNDRY/analog/90nm/assura_tech.lib"
+  ?avrpt t
+  ?dbuPerUU 2000.0
+  ?flagNon45 t
+  ?flagOffGrid (0.005 1.0)
+  ?joinPins top
+  ?overwrite t
+  ?textPriOnly nil
+  ?userUnits "micron"
+)

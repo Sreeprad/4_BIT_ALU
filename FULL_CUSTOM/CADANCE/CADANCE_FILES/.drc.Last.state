@@ -1,0 +1,144 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 DRC saved state
+;----------------------------------------------------------------------------
+
+
+
+vuiDRCFormTable = '(
+	format  "DFII"
+	vui2dbxor  nil
+	runName  "INV_DRC"
+	runDir  "."
+	machineLoc  "local"
+	viewRules  t
+	technologyField  "gpdk090"
+	runsetField  "default"
+	rules  "/home/install/FOUNDRY/analog/90nm/assura/drc.rul"
+	switches  ""
+	rsfInclude  ""
+	varTag  "None"
+	varVal  ""
+	varDefVal  ""
+	varDesc  ""
+	avView  nil
+	additionalFunctionsButton  nil
+	limitDRCswitcher  nil
+	library  "4_BIT_ALU"
+	cell  "INV"
+	view  "layout"
+	saveExtracted  nil
+	extractedView  "drc_extracted"
+	areaButton  "Full"
+	rulesButton  nil
+	rsfIncludeButton  nil
+)
+
+
+
+
+limitDrcCheckTable = '(
+	limitDRCTreatModeList  "include"
+	limitDRCFiltersList  "inputLayer"
+	layersListText  nil
+	limitDRCEditor  ""
+)
+
+
+
+
+vuiDRCFormVarTable = '(
+)
+
+
+additionalFunctionsFieldsTable = '(
+	AFflattenCellFlag  nil
+	AFjoinableNetsFlag  nil
+	AFoutFileFlag  nil
+	AFchangeLabelFlag  nil
+	AFdeleteCellTextFlag  nil
+)
+
+
+vuiDRCFormAdditionalFunctionsTable = '(
+     flattenCell  nil
+     joinableNets nil
+     changeLabel  nil
+     mustJoinNet  nil
+     outFile      nil
+     deleteCellText nil
+)
+
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura 3.2 Template Version 1
+;----------------------------------------------------------------------------
+
+vuiDRCOptions = '(
+     (( ?avrpt ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( avrpt t )
+             ( spacer "  " )
+             ( spacer2 "  " )
+             ( printError nil )
+             ( useOption nil )
+             ( maxErrorShapesPerCell 1000 )
+     )
+     (( ?dbuPerUU ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( dbuPerUU 2000.0 )
+     )
+     (( ?flagNon45 ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( flag t )
+     )
+     (( ?flagOffGrid ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( label "Flag Off Grid" )
+             ( gridSize 0.005 )
+             ( markerSize 1.0 )
+     )
+     (( ?joinPins ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( joinPins "Top" )
+     )
+     (( ?overwrite ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( overwrite t )
+     )
+     (( ?textPriOnly ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( textPriOnly nil )
+     )
+     (( ?userUnits ) 
+             ( "view" t )
+             ( "edit" t )
+             ( "use" t )
+             ( userUnits "micron" )
+     )
+)
+

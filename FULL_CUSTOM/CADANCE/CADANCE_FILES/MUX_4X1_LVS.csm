@@ -1,0 +1,7 @@
+Schematic                      | Layout                       | Status
+-------------------------------------------------------------------------------
+INV schematic 4_BIT_ALU        | INV layout 4_BIT_ALU         | matched     
+MUX_2_1 schematic 4_BIT_ALU    | MUX_2_1 layout 4_BIT_ALU     | matched     
+MUX_4_1 schematic 4_BIT_ALU    | MUX_4_1 layout 4_BIT_ALU     | matched     
+
+Schematic and Layout Match

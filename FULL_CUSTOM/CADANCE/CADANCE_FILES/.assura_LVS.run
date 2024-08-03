@@ -1,0 +1,3 @@
+#!/bin/sh -f
+/home/install/ASSURA41/tools.lnx86/assura/bin/assura /home/klu/Desktop/SDC_project/INV_LVS.rsf -cdslib /home/klu/Desktop/SDC_project/cds.lib -gui
+exit $?

@@ -1,0 +1,20 @@
+C pmos1v(MOS) pmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C nmos1v(MOS) nmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C "INV schematic 4_BIT_ALU" "INV layout 4_BIT_ALU"
+N Vin Vin
+N Vout Vout
+N VDD VDD
+N GND GND
+I NM0 avD1_1
+I PM0 avD7_1
+

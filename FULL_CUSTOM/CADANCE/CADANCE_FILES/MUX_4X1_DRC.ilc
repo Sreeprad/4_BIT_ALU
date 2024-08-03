@@ -1,0 +1,7 @@
+gpdk090 nmos1v layout 237
+gpdk090 nmos1v layout 237
+gpdk090 pmos1v layout 237
+gpdk090 pmos1v layout 237
+4_BIT_ALU INV layout 1667
+4_BIT_ALU MUX_2_1 layout 8313
+4_BIT_ALU MUX_4_1 layout 2768

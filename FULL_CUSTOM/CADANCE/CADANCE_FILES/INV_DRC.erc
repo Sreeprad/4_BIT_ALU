@@ -1,0 +1,11 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'INV layout 4_BIT_ALU':
+  info: Assign pin label "GND" at (1.2000, 0.1000) to layer `Metal1_p'.
+  info: Assign pin label "Vin" at (0.0600, 1.3600) to layer `Metal1_p'.
+  info: Assign pin label "Vout" at (2.2600, 1.3600) to layer `Metal1_p'.
+  info: Assign pin label "VDD" at (1.2000, 2.7000) to layer `Metal1_p'.
+
+***** End of Label Report *****
+

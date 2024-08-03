@@ -1,0 +1,9 @@
+; Assura generated file -- DO NOT EDIT --
+; Do NOT rely on the content of this file, it may change.
+;
+2 statistics extraction device net pin parameter rewire total
+stat extr dev net pin param rewire total 
+none matched expanded errors param_err pin_err empty_sch empty_lay not_run 
+00000001
+24 OR_GATE layout 4_BIT_ALU 1 0 0 0 1 135 1 157 1 183 1 209 1 238 1 260 1 289 1 311 1 337 1 359 1 384 1 409 1 436 1 463 1 488 1 513 1 540 1 567 1 588 1 615 1 636 1 659 1 686 1 715 1 736 1 763 1 784 1 807 1 834 1 863 1 887 1 910 1 930 1 950 1 970 1 990 1 1010 1 1030 1 1050 1 1070 1 1090 1 1109 1 1128 1 1148 1 1168 1 1189 1 1207 1 1225
+24 OR_GATE layout 4_BIT_ALU 1 27 OR_GATE schematic 4_BIT_ALU 1 0

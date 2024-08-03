@@ -1,0 +1,35 @@
+@(#)$CDS: nvn_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+run on cad6 at Mon Jun 17 15:07:37 2024
+
+Schematic                       | Layout                       | Status
+-------------------------------------------------------------------------------
+AND_GATE schematic 4_BIT_ALU    | AND_GATE layout 4_BIT_ALU    | matched    
+
+Schematic and Layout Match
+
+Schematic:
+  Library:4_BIT_ALU
+  Cell   :AND_GATE
+  View   :schematic
+
+Layout:
+  Library:4_BIT_ALU
+  Cell   :AND_GATE
+  View   :layout
+
+
+
+Extraction  Information
+--------------------
+     0 cells have 0 mal-formed device problems
+     0 cells have 0 label short problems
+     0 cells have 0 label open problems
+
+Mismatch  Information
+--------------------
+     0 cells have 0 Net mismatches
+     0 cells have 0 Device mismatches
+     0 cells have 0 Pin mismatches
+     0 cells have 0 Parameter mismatches
+

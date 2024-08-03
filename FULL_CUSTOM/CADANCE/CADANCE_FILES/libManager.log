@@ -1,0 +1,26 @@
+\o Program:		@(#)$CDS: libManager version 6.1.8 - CAT37 10/18/2022 20:11 (sjfdcl1032) $
+\o Sub version:		sub-version  s292 
+\o Arguments:		-unmapped -mpssession virtuoso3571 -mpshost cad6 
+\o Working Directory:	cad6:/home/klu/Desktop/SDC_project
+\o 64-bit offsets
+\o Qt version: 		5.9.1
+\o changeWorkingDir("/home/klu/Desktop/SDC_project") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o Log file is "/home/klu/Desktop/SDC_project/libManager.log".
+\o Opening libManager window.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\o MPS service: map window
+\o Library Manager customization server connected.
+\a nrSetCurrentWindow(cdsLibManager)
+\w Warning: The directory: '/home/klu/xyz' does not exist
+\w 	but was defined in libFile '/home/klu/cds.lib' for Lib 'xyz'.
+\w Warning: The directory: '/home/klu/phani' does not exist
+\w 	but was defined in libFile '/home/klu/cds.lib' for Lib 'phani'.
+\a nrResizeWindow(cdsLibManager list(0 28 1440 723))
+\a cdsLibManager->libListBox->value = "4_BIT_ALU"
+\a cdsLibManager->libLineEdit->value = "4_BIT_ALU"
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS service: shutdown
+\o libManager is exiting.
+\a exit(0)

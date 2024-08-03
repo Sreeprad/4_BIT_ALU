@@ -1,0 +1,49 @@
+#--------------------------------------------------------------------------------------
+# OPTION COMMAND FILE created by Cadence Extraction Quantus UI Version 21.2.2-p045
+#--------------------------------------------------------------------------------------
+
+capacitance \
+	 -decoupling_factor 1.0 \
+	 -ground_net "GND"
+device_reduction \
+	 -m_factor "infinite"
+extract \
+	 -selection "all" \
+	 -type "rc_decoupled"
+extraction_setup \
+	 -array_vias_spacing auto \
+	 -max_fracture_length infinite \
+	 -max_fracture_length_unit "MICRONS" \
+	 -macro_cells_type "default"  \
+	 -max_via_array_size "auto" \
+	 -net_name_space "LAYOUT"
+filter_res \
+	 -merge_parallel_res false \
+	 -min_res 0.001
+input_db -type assura \
+	 -design_cell_name "MUX_2_1 layout 4_BIT_ALU" \
+	 -run_name "MUX2_LVS" \
+	 -directory_name "/home/klu/Desktop/SDC_project" \
+	 -format "DFII" \
+	 -library_definitions_file "/home/klu/Desktop/SDC_project/cds.lib"
+output_db -type extracted_view \
+	 -cap_component "pcapacitor" \
+	 -cap_property_name "c" \
+	 -enable_cellview_check false \
+	 -include_cap_model "false" \
+	 -include_parasitic_cap_model "comment" \
+	 -include_res_model "false" \
+	 -include_parasitic_res_model "comment" \
+	 -include_parasitic_res_width true \
+	 -res_component "presistor" \
+	 -res_property_name "r" \
+	 -view_name "av_extracted"
+output_setup \
+	 -temporary_directory_name "MUX2_LVS"
+process_technology \
+	 -technology_corner \
+		"default" \
+	 -technology_library_file "/home/install/FOUNDRY/analog/90nm/assura_tech.lib" \
+	 -technology_name "gpdk090" \
+	 -temperature \
+		25.0

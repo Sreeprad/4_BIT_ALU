@@ -1,0 +1,20 @@
+//Revision 2
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config MUX_2_1_TEST;
+design \4_BIT_ALU .MUX_2_1_TEST:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl, pspice, dspf;
+stoplist spectre;
+
+
+inst (\4_BIT_ALU .MUX_2_1_TEST:schematic).I0 binding :av_extracted;
+
+
+endconfig

@@ -1,0 +1,26 @@
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+21.2.2-p045 Fri Sep 23 10:56:50 PDT 2022
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2022 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXOPT-243) : For Assura inputs, if the "output_setup -directory_name" option was not
+specified, it is automatically set to the input directory.
+
+
+INFO (EXTQRCXLOG-103) : Command file checking completed.
+
+Ending at 2024-Jun-26 16:25:34 (2024-Jun-26 10:55:34 GMT).
+  Executed by:           klu
+  Execution host:        cad6
+  Run duration:          00:00:00 CPU time, 00:00:00 clock time
+  Memory used:           135,462,912
+  Warning messages:      0
+  Error messages:        0
+
+Exit code 0.
+Cadence Quantus Extraction exited successfully.

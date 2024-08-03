@@ -1,0 +1,4 @@
+!<alc> v1 28
+0    6    0 MUX_2_1 layout 4_BIT_ALU
+0    5    0 INV layout 4_BIT_ALU
+0    7    0 MUX_2_1_INV layout 4_BIT_ALU

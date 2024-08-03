@@ -1,0 +1,16 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'MUX_4_1 layout 4_BIT_ALU':
+  info: Assign pin label "S1" at (0.0600, 0.8600) to layer `Metal1_p'.
+  info: Assign pin label "S0" at (0.0600, 3.0600) to layer `Metal1_p'.
+  info: Assign pin label "D" at (0.0600, 6.4500) to layer `Metal1_p'.
+  info: Assign pin label "C" at (0.0600, 7.5500) to layer `Metal1_p'.
+  info: Assign pin label "GND" at (13.8000, 0.0600) to layer `Metal1_p'.
+  info: Assign pin label "B" at (0.0600, 23.6500) to layer `Metal1_p'.
+  info: Assign pin label "A" at (0.0600, 24.8500) to layer `Metal1_p'.
+  info: Assign pin label "VDD" at (13.8000, 27.5400) to layer `Metal1_p'.
+  info: Assign pin label "Y" at (27.4600, 15.5600) to layer `Metal1_p'.
+
+***** End of Label Report *****
+

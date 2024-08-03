@@ -1,0 +1,78 @@
+*
+*
+*
+*                       LINUX           Wed Jun 26 16:25:42 2024
+*
+*
+*
+*  PROGRAM  advgen
+*
+*  Name           : advgen - Quantus - (64-bit)
+*  Version        : 21.2.2-p045
+*  Build Date     : Fri Sep 23 10:27:37 PDT 2022
+*
+*  HSPICE LIBRARY
+*
+*!LENGTH_UNITS METERS
+*
+*
+*
+
+*
+.SUBCKT INV VDD GND Vin Vout
+*
+*
+*  caps2d version: 10
+*
+*
+*       TRANSISTOR CARDS
+*
+*
+MavD1_1	Vout#2	Vin#4	GND#1	GND#3	nmos1v#20ivpcell#20gpdk090	L=1e-07
++ W=1.2e-07
++ AD=6.96e-14	AS=6.96e-14	PD=1.16e-06	PS=1.16e-06
++ simW=1.2e-07 fw=1.2e-07
+MavD7_1	Vout#5	Vin#1	VDD#1	VDD	pmos1v#20ivpcell#20gpdk090	L=1e-07
++ W=1.2e-07
++ AD=6.96e-14	AS=6.96e-14	PD=1.16e-06	PS=1.16e-06
++ simW=1.2e-07 fw=1.2e-07
+*
+*
+*       RESISTOR AND CAP/DIODE CARDS
+*
+Ri1	Vin#3	Vin	10.426666	$mt1	$W=1.2e-07
++ $X=0.3805 $Y=1.36
+Ri2	Vout	Vout#1	0.393939	$mt1	$W=1.2e-07
++ $X=1.9405 $Y=1.36
+Ri3	Vout#1	Vout#3	0.330271	$mt1	$W=1.2e-07	$X=1.62 $Y=1.14
+Ri5	Vout#1	Vout#6	0.463604	$mt1	$W=1.2e-07	$X=1.62 $Y=1.68
+Ri7	Vout#2	Vout#3	15.000000	$mt1	$W=1.2e-07	$X=1.62 $Y=0.86
+Ri8	Vout#5	Vout#6	15.000000	$mt1	$W=1.2e-07	$X=1.62 $Y=2.06
+Ri9	VDD	VDD#2	0.134737	$mt1	$W=3.8e-07	$X=0.95 $Y=2.39
+Ri12	VDD#1	VDD#2	15.000000	$mt1	$W=3.8e-07	$X=1.08 $Y=2.06
+Ri14	GND	GND#2	0.160000	$mt1	$W=3.8e-07	$X=0.95 $Y=0.47
+Ri17	GND#1	GND#2	15.000000	$mt1	$W=3.8e-07	$X=1.08 $Y=0.86
+Ri18	GND#3	GND#2	15.000000	$mt1	$W=3.8e-07	$X=0.82 $Y=0.86
+Rj1	Vin#1	Vin#2	63.506596	$poly	$W=1e-07
++ $X=1.35 $Y=1.7105
+Rj2	Vin#2	Vin#3	44.067440	$poly	$W=1.2e-07	$X=1.06 $Y=1.36
+Rj3	Vin#2	Vin#4	43.506592	$poly	$W=1e-07	$X=1.35 $Y=1.11
+*
+*       CAPACITOR CARDS
+*
+*
+C1	VDD	GND	2.87856e-16	$cmodel	$X=1.004 $Y=0.8045
+C2	Vin	GND	4.09777e-17	$cmodel	$X=0.2445 $Y=1.2775
+C3	Vout	GND	4.49685e-17	$cmodel	$X=2.044 $Y=1.2775
+C4	Vin#1	GND	6.6737e-17	$cmodel	$X=1.3125 $Y=1.842
+C5	Vin#4	GND	5.57872e-17	$cmodel	$X=1.318 $Y=0.8155
+C6	Vin#3	GND	8.1763e-17	$cmodel	$X=0.704 $Y=1.1545
+C7	Vout#1	GND	5.40673e-17	$cmodel	$X=1.5245 $Y=1.243
+C8	Vout#3	GND	4.66602e-17	$cmodel	$X=1.568 $Y=0.8855
+C9	Vout#6	GND	5.6237e-17	$cmodel	$X=1.5565 $Y=1.771
+C10	VDD#2	GND	4.19353e-17	$cmodel	$X=0.9065 $Y=1.5745
+C11	Vin#2	GND	6.80875e-17	$cmodel	$X=1.2965 $Y=1.2545
+*
+*
+.ENDS INV
+*

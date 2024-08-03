@@ -1,0 +1,27 @@
+Version 3
+4 npn_coll 1 298 6 0
+4 npn_emit 1 418 12 0
+4 poly_conn 1 275 10 0
+4 nwell_conn 1 301 6 0
+4 ndiff_conn 1 294 12 0
+4 pdiff_conn 1 303 14 0
+4 metal1_conn 1 325 30 0
+4 Metal1_p 1 170 30 0
+4 metal2_conn 1 338 34 0
+4 Metal2_p 1 176 34 0
+4 metal3_conn 1 349 38 0
+4 Metal3_p 1 182 38 0
+4 metal4_conn 1 359 42 0
+4 Metal4_p 1 188 42 0
+4 metal5_conn 1 369 46 0
+4 Metal5_p 1 194 46 0
+4 metal6_conn 1 379 50 0
+4 Metal6_p 1 200 50 0
+4 metal7_conn 1 389 54 0
+4 Metal7_p 1 206 54 0
+4 metal8_conn 1 399 58 0
+4 Metal8_p 1 212 58 0
+4 metal9_conn 1 410 62 0
+4 Metal9_p 1 218 62 0
+4 Oxide_thk 0 424 4 0
+4 Oxide 0 246 2 0

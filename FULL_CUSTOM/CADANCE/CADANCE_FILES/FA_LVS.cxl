@@ -1,0 +1,37 @@
+C nmos1v(MOS) nmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C pmos1v(MOS) pmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C "FA schematic 4_BIT_ALU" "FA layout 4_BIT_ALU"
+N net2 avC8
+N net1 avC10
+N A A
+N B B
+N C C
+N VDD VDD
+N GND GND
+N Sum Sum
+N Carry Carry
+I PM6 avD7_5
+I PM8 avD7_7
+I PM5 avD7_3
+I PM7 avD7_6
+I PM2 avD7_4
+I PM1 avD7_2
+I PM0 avD7_1
+I NM6 avD1_5
+I NM8 avD1_7
+I NM3 avD1_4
+I NM2 avD1_2
+I NM1 avD1_1
+I NM0 avD1_3
+I NM7 avD1_6
+

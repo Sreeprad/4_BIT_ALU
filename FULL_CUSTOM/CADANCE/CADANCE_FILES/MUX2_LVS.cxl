@@ -1,0 +1,31 @@
+C nmos1v(MOS) nmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C pmos1v(MOS) pmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C "MUX_2_1 schematic 4_BIT_ALU" "MUX_2_1 layout 4_BIT_ALU"
+N net4 avC9
+N Y Y
+N S S
+N A A
+N B B
+N VDD VDD
+N GND GND
+I PM5 avD7_1
+I PM4 avD7_4
+I PM3 avD7_3
+I PM2 avD7_5
+I PM1 avD7_2
+I NM4 avD1_1
+I NM3 avD1_5
+I NM2 avD1_3
+I NM1 avD1_4
+I NM0 avD1_2
+

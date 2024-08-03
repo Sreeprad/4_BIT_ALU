@@ -1,0 +1,29 @@
+C nmos1v(MOS) nmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C pmos1v(MOS) pmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C "Ex_OR_Gate schematic 4_BIT_ALU" "Ex_OR_Gate layout 4_BIT_ALU"
+N net1 avC6
+N net2 avC7
+N A A
+N B B
+N VDD VDD
+N GND GND
+N Y Y
+I PM3 avD7_2
+I PM2 avD7_1
+I PM1 avD7_4
+I PM0 avD7_3
+I NM3 avD1_2
+I NM2 avD1_1
+I NM1 avD1_4
+I NM0 avD1_3
+

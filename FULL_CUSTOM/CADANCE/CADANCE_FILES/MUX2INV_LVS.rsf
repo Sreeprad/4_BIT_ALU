@@ -1,0 +1,1664 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; RSF include(/home/install/FOUNDRY/analog/90nm/assura/LVSinclude.rsf) Section
+; Specified in the Assura UI
+;----------------------------------------------------------------------------
+
+
+avCompareRules(
+
+  bind( net("*[*]" "*<*>") )
+   
+  mergeSplitGate( sameOrder )
+  autoPinSwap(t 3000)
+  expandOnError((pins t) (swap t) (reduce t) (swapThres t))
+)
+
+
+
+
+;----------------------------------------------------------------------------
+; avParameter Section
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avParameters(
+  ?inputLayout ( "df2" "4_BIT_ALU" )
+  ?cellName "MUX_2_1_INV"
+  ?viewName "layout"
+  ?runName "MUX2INV_LVS"
+  ?technology "gpdk090"
+  ?techLib "/home/install/FOUNDRY/analog/90nm/assura_tech.lib"
+  ?avrpt t
+  ?dbuPerUU 2000.0
+  ?joinPins top
+  ?overwrite t
+  ?textLevel ( 0:0 )
+  ?textPriOnly t
+  ?userUnits "micron"
+)
+
+
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Rules Files
+; Specified in the Assura UI
+;----------------------------------------------------------------------------
+
+;/*************************************************************************
+;
+; GENERIC PDK Process Assura LVS Rules 
+;
+;*************************************************************************
+;
+;  _______________________________________________________________
+; * Cadence Design Systems shall not be liable for the accuracy   *
+; * of this extract rule file or it's ability to capture errors.  *
+; * The user is responsible for thoroughly testing and            *
+; * implementing it's features.                                   *
+; *---------------------------------------------------------------*
+;
+;
+;************************************************************************/
+
+avCompareRules(
+
+  printf( "  \n" )
+  printf(
+   "*************************************************************** \n"
+  )
+  printf( "  \n" )
+  printf(
+    " GENERIC PDK Assura Compare Rules file \n"
+  )
+ 
+  printf(
+   "  Cadence Design Systems shall not be liable for the accuracy \n"
+  )
+  printf(
+   "  of this LVS rule file or its ability to capture errors.     \n"
+  )
+  printf(
+   "  The user is responsible for thoroughly testing and          \n"
+  )
+  printf(
+   "  implementing its features.                                  \n"
+  )
+  printf( " \n" )
+  printf(
+   "*************************************************************** \n"
+  )
+  printf( " \n" )
+
+; ****************************************************
+; SNA devices filter
+  layout( filterDevice( "TIE") )
+
+; *********************************************************************
+; Put tolerance values up front so they are easy to change
+; *********************************************************************
+
+; these are percentages
+
+; MOS width, length
+
+  mosW_lvsTol = 1.0
+  mosL_lvsTol = 1.0
+
+; RES w, l
+
+  resW_lvsTol = 1.0
+  resL_lvsTol = 1.0
+
+; BJT area
+
+  bjtAREA_lvsTol = 1.0
+
+; DIODE area
+
+  diodeAREA_lvsTol = 5.0
+
+; MOSCAP w, l
+
+  moscapW_lvsTol = 1.0
+  moscapL_lvsTol = 1.0
+
+; MIMCAP area
+
+  mimcapAREA_lvsTol = 1.0
+
+
+; *********************************************************************
+; Define how devices are permuted (combined)
+; *********************************************************************
+
+; *****************************************************************
+; Combine parallel MOS devices
+; combines only if lengths are equal
+
+  procedure( parallelMOS( mos1 mos2 )
+    prog( ( parMos missing1 missing2 )
+
+; set the output plist to nil
+
+      parMos = ncons(nil)
+
+; If m is not defined, set m to 1
+
+      when( !mos1->m  mos1->m = float(1) )
+      when( !mos2->m  mos2->m = float(1) )
+
+; If W or L is missing, do not combine
+
+      foreach( prop '( w l )
+        unless( get( mos1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( mos2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Parallel MOS with missing parameters not combined:\n"
+        )
+
+        when( missing1
+          printf(
+            "   1st device: MOS missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: MOS with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: MOS missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: MOS with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that w, l and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      W1 = float( mos1->w )
+      W2 = float( mos2->w )
+      L1 = float( mos1->l )
+      L2 = float( mos2->l )
+      M1 = float( mos1->m )
+      M2 = float( mos2->m )
+
+; combine only if lengths are equal
+
+      diffL = abs( L2 - L1 )
+
+      unless( diffL < .005e-6
+        return( "doNotCombine" )
+      )
+
+; Now combine parameters; make sure we set new L and M.
+
+      parMos->w = float(W1 * M1 + W2 * M2)
+
+      parMos->m = float(1.0)
+      parMos->l = L1
+
+; Report combining to the log file
+
+      printf( "\n" )
+      printf( "** Parallel MOS combined: \n" )
+
+      printf("   1st device: L = %g W = %g m = %g \n"
+        L1 W1 M1 )
+
+      printf("   2nd device: L = %g W = %g m = %g \n"
+        L2 W2 M2 )
+
+      printf(
+        "   Resulting: L = %g W = %g m = 1 \n" L1 parMos->w )
+
+      return( parMos )
+
+    )
+  ) ;parallelMOS
+
+
+; *****************************************************************
+; combine parallel resistors
+
+  procedure( parallelRES( res1 res2 )
+    prog( (parRes missing1 missing2)
+
+; set the output plist to nil
+      parRes = ncons(nil)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !res1->m  res1->m = 1 )
+      when( !res2->m  res2->m = 1 )
+
+; If W or L is missing, do not combine
+
+      foreach( prop '( w l )
+        unless( get( res1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( res2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Parallel RES with missing parameters not combined:\n"
+        )
+
+        when( missing1
+          printf(
+            "   1st device: Res missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: Res with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: Res missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: Res with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that w, l and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      M1 = float( res1->m )
+      M2 = float( res2->m )
+      W1 = float( res1->w )
+      W2 = float( res2->w )
+      L1 = float( res1->l )
+      L2 = float( res2->l )
+
+; Combine only if difference in length is < 0.005 um
+
+      diffL = abs( L2 - L1 )
+
+      when( diffL >= 0.005e-6
+        printf( "\n" )
+        printf(
+          "** Parallel RES with unequal L not combined\n" )
+        printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+        printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+        return("doNotCombine")
+      )
+
+; Combine only if both m factors are 1
+
+      diffM1 = abs( M1 - 1.0 )
+      diffM2 = abs( M2 - 1.0 )
+
+      when( diffM1 >= 0.005e-6 || diffM2 >= 0.005e-6
+        printf( "\n" )
+        printf(
+          "** Parallel RES with m factor > 1 not combined\n" )
+        printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+        printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+        return("doNotCombine")
+      )
+
+; combine parameters
+; correct for m-factor here
+
+      newL = L1
+      newW = W1 + W2
+
+      parRes->w = newW
+      parRes->l = newL
+      parRes->m = float( 1 )
+
+      printf( "\n" )
+      printf( "** Parallel resistors combined: \n" )
+      printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+      printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+      printf(
+        "   Resulting: W = %g L = %g m = 1\n" newW newL
+      )
+
+      return(parRes)
+
+    ) ;prog
+  ) ;procedure( parallelRES )
+
+
+; *****************************************************************
+; combine series resistors
+
+  procedure( seriesRES( res1 res2 )
+    prog( (serRes missing1 missing2)
+
+; set the output plist to nil
+
+      serRes = ncons(nil)
+
+; If m is missing, set it to 1
+
+      when( !res1->m  res1->m = 1 )
+      when( !res2->m  res2->m = 1 )
+
+; If W or R is missing, do not combine
+
+      foreach( prop '( w l )
+        unless( get( res1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( res2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Series RES with missing parameters not combined:\n"
+        )
+
+        when( missing1
+          printf(
+            "   1st device: Res missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: Res with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: Res missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: Res with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that w, r and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      M1  = float( res1->m )
+      M2  = float( res2->m )
+      W1  = float( res1->w )
+      W2  = float( res2->w )
+      L1  = float( res1->l )
+      L2  = float( res2->l )
+
+; Combine only if difference in width is < 0.005 um
+
+      diffW = abs( W2 - W1 )
+
+      when( diffW >= 0.005e-6
+        printf( "\n" )
+        printf(
+          "** Series RES with unequal W not combined\n" )
+        printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+        printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+        return("doNotCombine")
+      )
+
+; Combine only if both m factors are 1
+
+      diffM1 = abs( M1 - 1.0 )
+      diffM2 = abs( M2 - 1.0 )
+
+      when( diffM1 >= 0.005e-6 || diffM2 >= 0.005e-6
+        printf( "\n" )
+        printf(
+          "** Series RES with m factor > 1 not combined\n" )
+        printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+        printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+        return("doNotCombine")
+      )
+
+; combine parameters
+; method depends on whether the widths or lengths are equal
+; correct for m-factor here
+
+      newW = W1
+      newL = L1 + L2
+
+      serRes->w = newW
+      serRes->l = newL
+      serRes->m = 1
+
+      printf( "\n" )
+      printf( "** Series resistors combined: \n" )
+
+      printf("   1st device: W = %g L = %g M = %g\n" W1 L1 M1)
+      printf("   2nd device: W = %g L = %g M = %g\n" W2 L2 M2)
+
+      printf("   Resulting: W = %g L = %g m = 1\n" newW newL )
+
+      return(serRes)
+
+    ) ;prog
+  ) ;procedure( seriesRES )
+
+
+; *****************************************************************
+; combine parallel moscaps
+; moscaps with different l's are not combined
+
+  procedure( parallelMOSCAP( moscap1 moscap2 )
+    prog( (parCap missing1 missing2)
+
+; set the output plist to nil
+
+      parCap = ncons(nil)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !moscap1->m  moscap1->m = 1 )
+      when( !moscap2->m  moscap2->m = 1 )
+
+; If W or L is missing, do not combine
+
+      foreach( prop '( w l )
+        unless( get( moscap1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( moscap2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Parallel MOSCAP with missing parameters not combined:\n"
+        )
+
+        when( missing1
+          printf(
+            "   1st device: moscap missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: moscap with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: moscap missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: moscap with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that w, l and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      M1 = float( moscap1->m )
+      M2 = float( moscap2->m )
+      W1 = float( moscap1->w )
+      W2 = float( moscap2->w )
+      L1 = float( moscap1->l )
+      L2 = float( moscap2->l )
+
+; Combine only if difference in length is < 0.005 um
+
+      diffL = abs( L2 - L1 )
+
+      when( diffL >= 0.005e-6
+        printf( "\n" )
+        printf("** Parallel moscap with unequal L not combined\n" )
+
+        printf("   1st device: L = %g W = %g \n" L1 W1 )
+        printf("   2nd device: L = %g W = %g \n" L2 W2 )
+
+        return("doNotCombine")
+      )
+
+; combine parameters
+; correct for m-factor here
+
+      newW   = W1 * M1 + W2 * M2
+      newL   = L1
+
+      parCap->w = newW
+      parCap->l = newL
+      parCap->m = float(1)
+
+; Report combining to the log file
+
+      printf( "\n" )
+      printf( "** Parallel moscap combined \n" )
+
+      printf("   1st device: L = %g W = %g \n" L1 W1 )
+      printf("   2nd device: L = %g W = %g \n" L2 W2 )
+
+      printf(
+        "   Resulting: L = %g W = %g m = 1 \n" newL newW )
+
+      return(parCap)
+
+    ) ;prog
+  ) ;procedure( parallelMOSCAP )
+
+
+; *****************************************************************
+; combine parallel MIM caps
+
+  procedure( parallelMIMCAP( mimcap1 mimcap2 )
+    prog( (parArea missing1 missing2)
+  
+; set the output plist to nil
+
+      parArea = ncons(nil)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !mimcap1->m  mimcap1->m = 1 )
+      when( !mimcap2->m  mimcap2->m = 1 )
+
+; If C is missing, do not combine
+
+      foreach( prop '( area )
+        unless( get( mimcap1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( mimcap2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        sprintf( msg
+          "Parallel MIMCAPs with missing parameters not combined"
+        )
+        printf( "** %s: \n" msg )
+
+        when( missing1
+          printf(
+            "   1st device: mimcap missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: mimcap with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: mimcap missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: mimcap with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that area and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      M1 = float( mimcap1->m )
+      M2 = float( mimcap2->m )
+      AREA1 = float( mimcap1->area )
+      AREA2 = float( mimcap2->area )
+
+; combine parameters
+; correct for m-factor here
+
+      newAREA   = AREA1 * M1 + AREA2 * M2
+
+      parArea->area = newAREA
+      parArea->m = float(1)
+
+; Report combining to the log file
+
+      printf( "\n" )
+      printf( "** Parallel mimcap combined \n" )
+
+      printf("   1st device: AREA = %g \n" AREA1 )
+      printf("   2nd device: AREA = %g \n" AREA2 )
+
+      printf(
+        "   Resulting: AREA = %g m = 1 \n" newAREA )
+
+      return(parArea)
+
+    ) ;prog
+  ) ;procedure( parallelMIMCAP )
+
+
+; *****************************************************************
+; Combine parallel Bipolar
+; The only parameters are area, m
+
+  procedure( parallelBJT( bjt1 bjt2 )
+    prog( ( parBjt missing1 missing2 )
+
+; set the output plist to nil
+
+      parBjt = ncons(nil)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !bjt1->m  bjt1->m = 1 )
+      when( !bjt2->m  bjt2->m = 1 )
+
+; If area is missing, do not combine
+; foreach is not necessary since there is only one parameter
+; the generic form is kept for easy expansion
+
+      foreach( prop '( area )
+        unless( get( bjt1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( bjt2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Parallel BJT with missing area not combined:\n"
+        )
+
+        when( missing1
+          printf(
+            "   1st device: BJT missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: BJT with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: BJT missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: BJT with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that area and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      area1 = float( bjt1->area )
+      area2 = float( bjt2->area )
+      M1 = float( bjt1->m )
+      M2 = float( bjt2->m )
+
+; combine only if areas per device are equal
+
+      diffA = abs( area2 - area1 )
+
+      unless( diffA < .001
+        return( "doNotCombine" )
+      )
+
+; Now combine parameters
+
+; save the area per emitter as the new area
+; save the sum of M1 and M2 as the new m
+
+; This is necessary because we can have more than two
+;   devices in parallel; if we just saved the total area
+;   we could combine the first two devices but not three.
+
+      parBjt->area = area2
+      newM = M1 + M2
+      parBjt->m = newM
+
+      printf( "\n" )
+      printf( "** Parallel BJT combined: \n" )
+
+      printf( "   1st device: area = %g m = %g \n" area1 M1 )
+      printf( "   2nd device: area = %g m = %g \n" area2 M2 )
+
+      printf( "   Resulting: area = %g m = %g \n" area2 newM )
+
+      return(parBjt)
+
+    ) ;prog
+  ) ;procedure
+
+
+; *****************************************************************
+; combine parallel diodes
+
+  procedure( parallelDIO( dio1 dio2 )
+    prog( ( parDio missing1 missing2 )
+
+; set the output plist to nil
+      parDio = ncons(nil)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !dio1->m  dio1->m = 1 )
+      when( !dio2->m  dio2->m = 1 )
+
+; If area is missing, do not combine
+; foreach is not necessary since there is only one parameter
+; the generic form is kept for easy expansion
+
+      foreach( prop '( area )
+        unless( get( dio1 prop )
+          missing1 = cons( prop missing1 )
+        ) ;unless
+        unless( get( dio2 prop )
+          missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missing1 || missing2 )
+
+        printf( "\n" )
+        printf(
+          "** Parallel DIODE with missing area not combined:\n" )
+
+        when( missing1
+          printf(
+            "   1st device: Diode missing parameters: %s \n"
+            buildString( missing1 ",") )
+        ) ;when
+        when( !missing1
+          printf(
+            "   1st device: Diode with all parameters \n" )
+        ) ;when
+
+        when( missing2
+          printf(
+            "   2nd device: Diode missing parameters: %s \n"
+            buildString( missing2 ",") )
+        ) ;when
+        when( !missing2
+          printf(
+            "   2nd device: Diode with all parameters \n" )
+        ) ;when
+
+        return( "doNotCombine" )
+      )
+
+; now we know that area and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+      area1 = float( dio1->area )
+      area2 = float( dio2->area )
+      M1 = float( dio1->m )
+      M2 = float( dio2->m )
+
+; Now combine parameters; set new m = 1
+
+      newarea = area1*M1 + area2*M2
+      parDio->area = newarea
+      parDio->m = float(1)
+
+      printf( "\n" )
+      printf( "** Parallel Diode combined: \n" )
+
+      printf( "   1st device: area = %g m = %g \n" area1 M1 )
+      printf( "   2nd device: area = %g m = %g \n" area2 M2 )
+
+      printf( "   Resulting: area = %g m = 1 \n" newarea )
+
+      return( parDio )
+
+    ) ;prog
+  ) ;parallelDIO
+
+
+; *********************************************************************
+; Define how device parameters are compared
+; *********************************************************************
+
+; *****************************************************************
+; Compare MOS device properties
+
+  procedure( compareMOS( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If W or L is missing generate a parameter mismatch
+
+      foreach( prop '( w l )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch MOS missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch MOS W/L/m %g %g %g"
+            float(schPlist->w) float(schPlist->l) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay MOS missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay MOS W/L/m %g %g %g"
+            float(layPlist->w) float(layPlist->l) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that w, l and m are defined for both plists
+
+      layM = layPlist->m
+      layW = float( layM * layPlist->w )
+      layL = float( layPlist->l )
+      schM = schPlist->m
+      schW = float( schM * schPlist->w )
+      schL = float( schPlist->l )
+
+      diffW = 100 * (abs( layW - schW ) / schW )
+      diffL = 100 * (abs( layL - schL ) / schL )
+
+      Werr = nil
+      Lerr = nil
+
+      when( diffW > mosW_lvsTol Werr = t )
+      when( diffL > mosL_lvsTol Lerr = t )
+
+; if no errors return nil
+
+      when( !Werr && !Lerr  return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf(
+        msg
+        "Err: MOS Sch L/W %g %g; Lay L/W %g %g"
+        schL schW layL layW
+      )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareMOS
+
+
+; *****************************************************************
+; Compare resistor properties
+
+  procedure( compareRES( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If L or W is missing generate a parameter mismatch
+
+      foreach( prop '( l w )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch RES missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch RES L/W/m %g %g %g"
+            float(schPlist->l) float(schPlist->w) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay RES missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay RES L/W/m %g %g %g"
+            float(layPlist->l) float(layPlist->w) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that w, l and m are defined for both plists
+; correct for m here
+
+      layM = layPlist->m
+      layL = float( layPlist->l )
+      layW = float( layPlist->w * layM )
+
+      schM = schPlist->m
+      schL = float( schPlist->l )
+      schW = float( schPlist->w * schM )
+
+      diffL = 100 * (abs( layL - schL ) / schL )
+      diffW = 100 * (abs( layW - schW ) / schW )
+
+      Werr = nil
+      Lerr = nil
+
+      when( diffL > resL_lvsTol Lerr = t )
+      when( diffW > resW_lvsTol Werr = t )
+
+; if no errors return nil
+
+      when( !Werr && !Lerr return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf( msg "Err: RES Sch L/W/M %g %g %g; Lay L/W/M %g %g %g"
+        schL float(schPlist->w) float(schPlist->m) layL float(layPlist->w) float(layPlist->m) )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareRES
+
+
+; *****************************************************************
+; Compare MOSCAP properties
+
+  procedure( compareMOSCAP( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If W or L is missing generate a parameter mismatch
+
+      foreach( prop '( w l )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch moscap missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch moscap W/L/m %g %g %g"
+            float(schPlist->w) float(schPlist->l) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay moscap missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay moscap W/L/m %g %g %g"
+            float(layPlist->w) float(layPlist->l) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that w, l and m are defined for both plists
+; correct for m here
+
+      layM = layPlist->m
+      layW = float( layM * layPlist->w )
+      layL = float( layPlist->l )
+
+      schM = schPlist->m
+      schW = float( schM * schPlist->w )
+      schL = float( schPlist->l )
+
+      diffW = 100 * (abs( layW - schW ) / schW )
+      diffL = 100 * (abs( layL - schL ) / schL )
+
+      Werr = nil
+      Lerr = nil
+
+      when( diffW > moscapW_lvsTol  Werr = t )
+      when( diffL > moscapL_lvsTol  Lerr = t )
+
+; if no errors return nil
+
+      when( !Werr && !Lerr  return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf(
+        msg
+        "Err: moscap Sch L/W %g %g; Lay L/W %g %g"
+        schL schW layL layW
+      )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareMOSCAP
+
+
+; *****************************************************************
+; Compare MIMCAP properties
+
+  procedure( compareMIMCAP( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m (m factor) is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If AREA is missing generate a parameter mismatch
+
+      foreach( prop '( area )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+;;      when( ( missingLay || missingSch )
+;;
+;;        when( missingSch
+;;          sprintf( msg1 "Sch mimcap missing params: %s"
+;;            buildString( missingSch ",") )
+;;        ) ;when
+;;        when( !missingSch
+;;          sprintf( msg1 "Sch mimcap area/m %g %g"
+;;            float(schPlist->area) float(schPlist->m)
+;;          )
+;;        ) ;when
+;;
+;;        when( missingLay
+;;          sprintf( msg2 "Lay mimcap missing params: %s"
+;;            buildString( missingLay ",") )
+;;        ) ;when
+;;        when( !missingLay
+;;          sprintf( msg2 "Lay mimcap area/m %g %g %g"
+;;            float(layPlist->area) float(layPlist->m)
+;;          )
+;;        ) ;when
+;;
+;;        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+;;        return( msg )
+;;      )
+
+; now we know that area and m are defined for both plists
+; correct for m here
+
+      layM = layPlist->m
+      layAREA = float( layM * layPlist->area )
+
+      schM = schPlist->m
+      if( schPlist->area then
+          schA = schPlist->area 
+	else
+	  schA = schPlist->VALUE
+	)
+      schAREA = float( schM * schA )
+
+      diffAREA = 100 * (abs( layAREA - schAREA ) / schAREA )
+
+      AREAerr = nil
+
+      when( diffAREA > mimcapAREA_lvsTol  AREAerr = t )
+
+; if no errors return nil
+
+      when( !AREAerr  return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf(
+        msg
+        "Err: mimcap Sch AREA %g; Lay AREA %g" schAREA layAREA
+      )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareMIMCAP
+
+
+; *****************************************************************
+; Compare BJT device properties
+
+  procedure( compareBJT( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If area is missing generate a parameter mismatch
+
+      foreach( prop '( area )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch BJT missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch BJT Area %g m %g"
+            float(schPlist->area) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay BJT missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay BJT Area %g m %g"
+            float(layPlist->area) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that area and m are defined for both plists
+; correct for m here
+
+      layM = layPlist->m
+      layA = float( layM * layPlist->area )
+      schM = schPlist->m
+      schA = float( schM * schPlist->area )
+
+      diffA = 100 * (abs( layA - schA ) / schA )
+
+      areaErr = nil
+
+      when( diffA > bjtAREA_lvsTol areaErr = t )
+
+; if no errors return nil
+
+      when( !areaErr return(nil) )
+
+; now we know there is a parameter error
+
+; if m = 1 for both devices keep the message simple
+
+      when( schM == 1 && layM == 1
+        sprintf(
+          msg
+          "Err: BJT Sch Area %g; Lay Area %g"
+          schA layA
+        )
+        return( msg )
+      )
+
+; m > 1 for either the schematic or layout device
+; we want a different message if m=1 vs. m>1
+
+      sprintf( msg0 "Err: BJT" )
+
+      sprintf( msgS
+        "Sch area %g (m=1)" schA )
+      sprintf( msgL
+        "Lay area %g (m=1)" layA )
+
+; override these strings if m > 1
+
+      when( schM > 1
+        sprintf( msgS
+          "Sch area (total) %g (m=%g)" schA float(schM) )
+      )
+      when( layM > 1
+        sprintf( msgL
+          "lay area (total) %g (m=%g)" layA float(layM) )
+      )
+
+      sprintf( msg "%s %s; %s" msg0 msgS msgL )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareBJT
+
+
+; *****************************************************************
+; Compare ind properties
+
+  procedure( compareIND( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If ind is missing generate a parameter mismatch
+
+      foreach( prop '( ind )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch Ind missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch Ind %g"
+            float(schPlist->ind)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay Ind missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay Ind %g"
+            float(layPlist->ind)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that ind are defined for both plists
+
+      layIND   = float( layPlist->ind  )
+
+      schIND   = float( schPlist->ind )
+
+      INDerr  = nil
+
+      when( layIND   != schIND INDerr = t )
+
+; if no errors return nil
+
+      when( !INDerr return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf( msg "Err: Ind Sch ind %g;
+        Lay ind %g"
+        schIND
+        layIND)
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareIND
+
+
+; *****************************************************************
+; Compare diode properties
+
+  procedure( compareDIO( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; If m is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+
+; If "area" is missing generate a parameter mismatch
+
+      foreach( prop '( area )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch DIODE missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch DIODE Area %g m %g"
+            float(schPlist->area) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay DIODE missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay DIODE area %g m %g"
+            float(layPlist->area) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that area and m are defined for both plists
+; correct for m here
+
+      layM = layPlist->m
+      layA = float( layM * layPlist->area )
+      schM = schPlist->m
+      schA = float( schM * schPlist->area )
+
+      diffA = 100 * (abs( layA - schA ) / schA )
+
+      areaErr = nil
+
+      when( diffA > diodeAREA_lvsTol areaErr = t )
+
+; if no errors return nil
+
+      when( !areaErr return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf( msg "Err: DIODE Sch Area %g; Lay Area %g" schA layA )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareDIO
+
+
+; *********************************************************************
+; Call the procedures
+; *********************************************************************
+
+; Device combining
+
+  mergeParallel( "mimcap" merge parallelMIMCAP )
+  mergeParallel( "npn" merge parallelBJT )
+  mergeParallel( "pnp" merge parallelBJT )
+  mergeParallel( "vpnp2" merge parallelBJT )
+  mergeParallel( "vpnp5" merge parallelBJT )
+  mergeParallel( "vpnp10" merge parallelBJT )
+  mergeParallel( "ndio" merge parallelDIO )
+  mergeParallel( "pdio" merge parallelDIO )
+  mergeParallel( "nmos1v" merge parallelMOS )
+  mergeParallel( "nmos1v_hvt" merge parallelMOS )
+  mergeParallel( "nmos1v_iso" merge parallelMOS )
+  mergeParallel( "nmos1v_nat" merge parallelMOS )
+  mergeParallel( "nmos2v" merge parallelMOS )
+  mergeParallel( "nmos2v_nat" merge parallelMOS )
+  mergeParallel( "pmos1v" merge parallelMOS )
+  mergeParallel( "pmos1v_hvt" merge parallelMOS )
+  mergeParallel( "pmos2v" merge parallelMOS )
+  mergeParallel( "nmoscap1v" merge  parallelMOSCAP )
+  mergeParallel( "nmoscap1v3" merge  parallelMOSCAP )
+  mergeParallel( "nmoscap2v" merge  parallelMOSCAP )
+  mergeParallel( "nmoscap2v3" merge  parallelMOSCAP )
+  mergeParallel( "pmoscap1v" merge  parallelMOSCAP )
+  mergeParallel( "pmoscap1v3" merge  parallelMOSCAP )
+  mergeParallel( "pmoscap2v" merge  parallelMOSCAP )
+  mergeParallel( "pmoscap2v3" merge  parallelMOSCAP )
+  mergeParallel( "resm1" merge parallelRES )
+  mergeParallel( "resm2" merge parallelRES )
+  mergeParallel( "resm3" merge parallelRES )
+  mergeParallel( "resm4" merge parallelRES )
+  mergeParallel( "resm5" merge parallelRES )
+  mergeParallel( "resm6" merge parallelRES )
+  mergeParallel( "resm7" merge parallelRES )
+  mergeParallel( "resm8" merge parallelRES )
+  mergeParallel( "resm9" merge parallelRES )
+  mergeParallel( "resnsndiff" merge parallelRES )
+  mergeParallel( "resnsnpoly" merge parallelRES )
+  mergeParallel( "resnspdiff" merge parallelRES )
+  mergeParallel( "resnsppoly" merge parallelRES )
+  mergeParallel( "ressndiff" merge parallelRES )
+  mergeParallel( "ressnpoly" merge parallelRES )
+  mergeParallel( "resspdiff" merge parallelRES )
+  mergeParallel( "ressppoly" merge parallelRES )
+
+  mergeSeries( "mimcap" noMerge )
+  mergeSeries( "npn" noMerge )
+  mergeSeries( "pnp" noMerge )
+  mergeSeries( "vpnp2" noMerge )
+  mergeSeries( "vpnp5" noMerge )
+  mergeSeries( "vpnp10" noMerge )
+  mergeSeries( "ndio" noMerge )
+  mergeSeries( "pdio" noMerge )
+  mergeSeries( "nmos1v" noMerge )
+  mergeSeries( "nmos1v_hvt" noMerge )
+  mergeSeries( "nmos1v_iso" noMerge )
+  mergeSeries( "nmos1v_nat" noMerge )
+  mergeSeries( "nmos2v" noMerge )
+  mergeSeries( "nmos2v_nat" noMerge )
+  mergeSeries( "pmos1v" noMerge )
+  mergeSeries( "pmos1v_hvt" noMerge )
+  mergeSeries( "pmos2v" noMerge )
+  mergeSeries( "nmoscap1v" noMerge )
+  mergeSeries( "nmoscap1v3" noMerge )
+  mergeSeries( "nmoscap2v" noMerge )
+  mergeSeries( "nmoscap2v3" noMerge )
+  mergeSeries( "pmoscap1v" noMerge )
+  mergeSeries( "pmoscap1v3" noMerge )
+  mergeSeries( "pmoscap2v" noMerge )
+  mergeSeries( "pmoscap2v3" noMerge )
+  mergeSeries( "resm1" merge seriesRES )
+  mergeSeries( "resm2" merge seriesRES )
+  mergeSeries( "resm3" merge seriesRES )
+  mergeSeries( "resm4" merge seriesRES )
+  mergeSeries( "resm5" merge seriesRES )
+  mergeSeries( "resm6" merge seriesRES )
+  mergeSeries( "resm7" merge seriesRES )
+  mergeSeries( "resm8" merge seriesRES )
+  mergeSeries( "resm9" merge seriesRES )
+  mergeSeries( "resnsndiff" merge seriesRES )
+  mergeSeries( "resnsnpoly" merge seriesRES )
+  mergeSeries( "resnspdiff" merge seriesRES )
+  mergeSeries( "resnsppoly" merge seriesRES )
+  mergeSeries( "ressndiff" merge seriesRES )
+  mergeSeries( "ressnpoly" merge seriesRES )
+  mergeSeries( "resspdiff" merge seriesRES )
+  mergeSeries( "ressppoly" merge seriesRES )
+
+; Uncomment the next line if you do NOT want to form
+; pseudo devices out of parallel MOS configurations.
+
+; formGate( none )
+
+
+; Parameter comparison
+
+  compareParameter( "mimcap" compareMIMCAP )
+  compareParameter( "npn" compareBJT )
+  compareParameter( "pnp" compareBJT )
+  compareParameter( "vpnp2" compareBJT )
+  compareParameter( "vpnp5" compareBJT )
+  compareParameter( "vpnp10" compareBJT )
+  compareParameter( "ndio" compareDIO )
+  compareParameter( "pdio" compareDIO )
+  compareParameter( "nmos1v" compareMOS )
+  compareParameter( "nmos1v_hvt" compareMOS )
+  compareParameter( "nmos1v_iso" compareMOS )
+  compareParameter( "nmos1v_nat" compareMOS )
+  compareParameter( "nmos2v" compareMOS )
+  compareParameter( "nmos2v_nat" compareMOS )
+  compareParameter( "pmos1v" compareMOS )
+  compareParameter( "pmos1v_hvt" compareMOS )
+  compareParameter( "pmos2v" compareMOS )
+  compareParameter( "nmoscap1v" compareMOSCAP )
+  compareParameter( "nmoscap1v3" compareMOSCAP )
+  compareParameter( "nmoscap2v" compareMOSCAP )
+  compareParameter( "nmoscap2v3" compareMOSCAP )
+  compareParameter( "pmoscap1v" compareMOSCAP )
+  compareParameter( "pmoscap1v3" compareMOSCAP )
+  compareParameter( "pmoscap2v" compareMOSCAP )
+  compareParameter( "pmoscap2v3" compareMOSCAP )
+  compareParameter( "resm1" compareRES )
+  compareParameter( "resm2" compareRES )
+  compareParameter( "resm3" compareRES )
+  compareParameter( "resm4" compareRES )
+  compareParameter( "resm5" compareRES )
+  compareParameter( "resm6" compareRES )
+  compareParameter( "resm7" compareRES )
+  compareParameter( "resm8" compareRES )
+  compareParameter( "resm9" compareRES )
+  compareParameter( "resnsndiff" compareRES )
+  compareParameter( "resnsnpoly" compareRES )
+  compareParameter( "resnspdiff" compareRES )
+  compareParameter( "resnsppoly" compareRES )
+  compareParameter( "resnwoxide" compareRES )
+  compareParameter( "resnwsti" compareRES )
+  compareParameter( "ressndiff" compareRES )
+  compareParameter( "ressnpoly" compareRES )
+  compareParameter( "resspdiff" compareRES )
+  compareParameter( "ressppoly" compareRES )
+
+) ;end avCompareRules
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Options Form
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avCompareRules(
+     listXRef()
+)
+
+
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Run Submit Form
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avCompareRules(
+schematic(
+netlist( dfII "/home/klu/Desktop/SDC_project/MUX2INV_LVS.vlr" )
+)
+bindingFile("/home/install/FOUNDRY/analog/90nm/assura/bind.rul")
+)
+
+
+avLVS()
+

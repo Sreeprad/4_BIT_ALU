@@ -1,0 +1,12 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'Ex_OR_Gate layout 4_BIT_ALU':
+  info: Assign pin label "B" at (0.0600, 1.7600) to layer `Metal1_p'.
+  info: Assign pin label "GND" at (3.7500, 0.1000) to layer `Metal1_p'.
+  info: Assign pin label "A" at (0.0600, 4.7600) to layer `Metal1_p'.
+  info: Assign pin label "VDD" at (3.7500, 6.6000) to layer `Metal1_p'.
+  info: Assign pin label "Y" at (7.9600, 3.0600) to layer `Metal1_p'.
+
+***** End of Label Report *****
+

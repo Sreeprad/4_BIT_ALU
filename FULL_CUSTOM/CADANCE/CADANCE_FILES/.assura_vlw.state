@@ -1,0 +1,32 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/22 00:04 (sjfhw885) $
+; sub-version 4.1_USR6_EHF13
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; Assura VLW saved state
+;----------------------------------------------------------------------------
+
+vuiLayerListOrder  =  "Alphabetical"
+vuiLayerList  = '(
+		("Metal1_p" 170 "Metal1_p = geomOr( Metal1_p Metal1_p_pin )" 2 3 t "y1 (drawing)" t)
+		("Metal1_p_pintext" 32 "Metal1_p_pintext = pinText( \"Metal1\" )" 0 0 t "y2 (drawing)" t)
+		("Metal1_v" 2576 "Metal1_v = groupVias(  via(Metal1_v) conn1(Metal1_p) conn2(metal1_conn) )" 1 10 t "y3 (drawing)" t)
+		("Oxide" 246 "Oxide = geomOr( Oxide )" 1 14 t "y3 (drawing)" t)
+		("_nmos_12" 502 "_nmos_12 = geomAndNot( L8530 L8948 )" 0 16 t "y4 (drawing)" t)
+		("_nmos_12_MOS_1" 560 "_nmos_12_MOS_1 = extractMOS(\"nmos1v\" _nmos_12 (poly_conn \"G\") (ndiff_conn \"S\" \"D\") (psubstrate..." 0 18 t "y5 (drawing)" t)
+		("_pmos_12" 487 "_pmos_12 = geomAndNot( L62733 L8948 )" 0 15 t "y6 (drawing)" t)
+		("_pmos_12_MOS_7" 784 "_pmos_12_MOS_7 = extractMOS(\"pmos1v\" _pmos_12 (poly_conn \"G\") (pdiff_conn \"S\" \"D\") (nwell_conn..." 0 17 t "y7 (drawing)" t)
+		("cont_ndiff" 2591 "cont_ndiff = groupVias(  via(cont_ndiff) conn1(metal1_conn) conn2(ndiff_conn) )" 1 12 t "y4 (drawing)" t)
+		("cont_pdiff" 2575 "cont_pdiff = groupVias(  via(cont_pdiff) conn1(metal1_conn) conn2(pdiff_conn) )" 1 9 t "y5 (drawing)" t)
+		("cont_poly" 2592 "cont_poly = groupVias(  via(cont_poly) conn1(metal1_conn) conn2(poly_conn) )" 1 13 t "y6 (drawing)" t)
+		("metal1_conn" 325 "metal1_conn = geomAndNot( L32159 M1Resdum )" 0 11 t "y7 (drawing)" t)
+		("ndiff_conn" 294 "ndiff_conn = geomAndNot( L46829 NPNdummy )" 0 4 t "y8 (drawing)" t)
+		("ntap" 296 "ntap = geomAnd( Nwell ndiff_conn )" 0 5 t "y2 (drawing)" t)
+		("nwell_conn" 301 "nwell_conn = geomAndNot( L59011 NPNdummy )" 0 6 t "y9 (drawing)" t)
+		("pdiff_conn" 303 "pdiff_conn = geomAndNot( L12267 NPNdummy )" 0 7 t "y0 (drawing)" t)
+		("poly_conn" 275 "poly_conn = geomAndNot( Poly Resdum )" 0 2 t "y1 (drawing)" t)
+		("psubstrate" 493 "psubstrate = geomAndNot( L9236 NPNdummy )" 0 1 t "y2 (drawing)" t)
+		("ptap" 307 "ptap = geomAndNot( pdiff_conn Nwell )" 0 8 t "y7 (drawing)" t)
+)

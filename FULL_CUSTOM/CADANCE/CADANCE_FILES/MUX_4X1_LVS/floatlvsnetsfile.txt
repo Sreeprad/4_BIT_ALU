@@ -1,0 +1,4 @@
+   Total floating nets =  0
+     Total signal nets =  24
+         Total LVS net = 24
+

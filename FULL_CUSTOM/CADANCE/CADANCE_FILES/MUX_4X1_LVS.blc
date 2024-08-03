@@ -1,0 +1,7 @@
+"pmos1v(MOS)" "pmos1v(MOS)"
+"nmos1v(MOS)" "nmos1v(MOS)"
+"MUX_2_1 layout 4_BIT_ALU" "MUX_2_1 schematic 4_BIT_ALU" "nmos1v(MOS)" "pmos1v(MOS)"
+"INV layout 4_BIT_ALU" "INV schematic 4_BIT_ALU" "nmos1v(MOS)" "pmos1v(MOS)"
+"MUX_4_1 layout 4_BIT_ALU" "MUX_4_1 schematic 4_BIT_ALU"
+Devices filtered from layout
+"TIE"

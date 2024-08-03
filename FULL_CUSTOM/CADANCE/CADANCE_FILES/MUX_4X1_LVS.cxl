@@ -1,0 +1,57 @@
+C pmos1v(MOS) pmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C nmos1v(MOS) nmos1v(MOS)
+N D D
+N G G
+N S S
+N B B
+
+C "INV schematic 4_BIT_ALU" "INV layout 4_BIT_ALU"
+N Vin avC2
+N Vout avC4
+N VDD avC3
+N GND avT557_1
+I PM0 avD7_1
+I NM0 avD1_1
+
+C "MUX_2_1 schematic 4_BIT_ALU" "MUX_2_1 layout 4_BIT_ALU"
+N net4 avC9
+N Y avC6
+N S avC2
+N A avC4
+N B avC3
+N VDD avC5
+N GND avT557_1
+I PM5 avD7_1
+I PM4 avD7_4
+I PM3 avD7_3
+I PM2 avD7_5
+I PM1 avD7_2
+I NM4 avD1_1
+I NM3 avD1_5
+I NM2 avD1_3
+I NM1 avD1_4
+I NM0 avD1_2
+
+C "MUX_4_1 schematic 4_BIT_ALU" "MUX_4_1 layout 4_BIT_ALU"
+N net3 avC11
+N net1 avC12
+N net2 avC10
+N A A
+N B B
+N C C
+N D D
+N S0 S0
+N S1 S1
+N GND GND
+N VDD VDD
+N Y Y
+I I2 I2
+I I1 I1
+I I0 I0
+I I3 I3
+
